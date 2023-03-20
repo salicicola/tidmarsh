@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>Bugs & Comments @ salicicola.com</title>
+		{%include "bugs/bug_head.htm" %}
+	</head>
+	<body>
+		<div id="eform">
+		    <h2>
+				Submitted &amp; removed from unsubmitted by <i>{{request.user.username}}</i> <br/> 
+				[<a href='/bugs/view/'>view unsubmitted</a>] or 
+				[<a href="/admin/common/bugrecord/{{rec.pk}}/">edit</a>] record
+			</h2>
+	   </div>
+	</body>
+</html>

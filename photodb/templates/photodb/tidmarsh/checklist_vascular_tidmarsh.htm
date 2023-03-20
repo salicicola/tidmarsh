@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<!--{%include 'photodb/head'%}-->
+	<head>
+	{%include 'photodb/tidmarsh/checklist_head.htm' %}
+	</head>
+	{% load humanize %}
+	<body>
+	{%include 'photodb/tidmarsh/checklist_header.htm' %}
+	{%include 'photodb/tidmarsh/checklist_tidmarsh_body.htm' %}
+	<br/>
+	Generated <i>{{generated}}</i> in <i>{{secs}}</i> seconds
+	{%include 'photodb/tidmarsh/checklist_tidmarsh_footer.htm' %}
+	</body>
+</html>

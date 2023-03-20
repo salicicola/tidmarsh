@@ -1,0 +1,34 @@
+java -jar /media/data/data/tomcat/webapps/ROOT/WEB-INF/lib/saxon9.jar index.xml index.xsl > ../CACHE/salicicola.html
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Recoverable error 
+  XTRE0540: Ambiguous rule match for /
+Matches both "document-node()" on line 33 of file:/media/data/data/django3/common/XSLT/index.xsl
+and "document-node()" on line 3 of
+  file:/media/data/data/django3/common/XSLT/index_events_current.xsl
+inside if
+[08/Mar/2022 14:21:22] "GET /salicicola/ HTTP/1.1" 200 41001
+Not Found: /index.js
+Not Found: /mssf_friends_globe.jpg
+Not Found: /photos/200611/20061111canon0260a.jpg
+Not Found: /March.jpg
+Not Found: /photos/201508/20150821olymp5786a.jpg
+Not Found: /photos/200909/20090916canon0833c.jpg
+Not Found: /photos/plants/quiz/2011/20110319ricoh0347qz.jpg
+Not Found: /photos/200802/20080215canon0192cs.jpg
+Not Found: /photos/201010/20101019ricoh0315a.jpg
+Not Found: /photos/201509/20150920olymp7117a.jpg
+Not Found: /photos/201405/20140518ricoh1232a.jpg
+Not Found: /slides/skvortsov.jpg
+Not Found: /photos/200808/20080802canon0151cs.jpg
+Not Found: /photos/200808/20080803canon0381cs.jpg
+Not Found: /index_animals4771.jpg
+Not Found: /20080430kodak0088cs.jpg
+Not Found: /Fly_Image.jpeg
+>>>>>>>> 2022-03-08 09:24:49 <<<<<<<<<<<<<<<<<<<<  revno #18
+[08/Mar/2022 15:03:12] "GET /static/images/mssf_friends_globe.jpg HTTP/1.1" 404 1713
+[08/Mar/2022 15:03:12] "GET /static/slides/skvortsov.jpg HTTP/1.1" 404 1686
+[08/Mar/2022 15:03:12] "GET /static/slides/chosenia_arbutifolia3.jpg HTTP/1.1" 404 1722
+[08/Mar/2022 15:03:12] "GET /static/images/index_animals4771.jpg HTTP/1.1" 404 1710
+[08/Mar/2022 15:03:12] "GET /static/photos/20080430/20080430kodak0088cs.jpg HTTP/1.1" 404 1743
+>>>>>>>> 2022-03-08 10:14:30 <<<<<<<<<<<< bzr commit -m'fixed jpeg (some were missing in static)' revno #19
+

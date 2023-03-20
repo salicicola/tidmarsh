@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Tidmarsh Photo Gallery</title>
+		<link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+        {% include 'photodb/photos/style.htm' %}
+	</head>	
+	<body bgcolor="#F0FFF0">
+        <h2>Vertebrates (subfilum of Chordata)</h2>
+{%for group in data %}
+    <!--<h3> {{group.latname}} </h3>-->
+    {%for family in group.families%}
+            <h3> {{family.latname}} </h3>
+    {%endfor%}
+		        <div style="margin-top:2ex">
+                    {%for genus in family.genera %} 
+                     <div>
+                        <b><i>{{genus.latname}}</i></b>
+                            {%for species in genus.species %}
+                                <table border="0" width="100%" style="padding-left:2em;">
+	                                <tr>
+		                                <td valign="top" width="25%" style="background-color:#EEEEEE;padding:1ex">
+			                                <i>{{genus.latname}} {{species.latname}}</a></i> {{species.colnames}} 
+			 
+                                            <br/>
+                                        </td>
+                                        <td valign="top" style="background-color:#EEEEEE;">
+			                                {%for imid in species.imids%}
+                                                <a target="image" href="/photodb/tidmarsh/view/{{species.pk}}/{{imid}}">
+                                                <img height="100" width="100" style="border: 2px solid green;" 
+                                                     src='/static/thm/photos/{{imid|slice:"0:6"}}/{{imid}}.jpg'/></a>
+                                            {%endfor%}
+                                        </td>
+                                    </tr>
+                                </table>
+                            {%endfor%}
+                     </div>
+                    {%endfor%}
+                </div>    
+{%endfor%}
+        {% include 'photodb/photos/footer.htm' %}
+	</body>
+</html>
+

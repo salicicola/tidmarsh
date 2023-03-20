@@ -1,0 +1,12 @@
+data/fixtures/bak/
+__pycache__
+.bzr
+.bzrignore
+_make_
+data/fixtures/*.xml
+data/static/thm/
+*~
+*.pyc
+*copy*
+*.js.txt
+**/TMP/*

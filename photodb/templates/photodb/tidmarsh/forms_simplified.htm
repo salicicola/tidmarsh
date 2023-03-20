@@ -1,0 +1,59 @@
+<form style="display:none" action="/photodb/edit/caption/" onSubmit="return duplicate()" method="POST" id="hidden_form"><!-- post /servlet/CaptionEditorNew -->
+	<input type="hidden" name="pnid" id="pnid" value="{{irec.spid}}">
+	<input type="hidden" name="url" id="url" value="XXX">
+	<input type="hidden" name="role" id="role" value="YYY">
+	<input type="hidden" name="id" id="id" value="ZZZ">
+	<input type="hidden" name="file" id="file" value="F/{{irec.fid}}.xml">
+	<input type="hidden" name="mode" id="mode" value="change">
+	<input type="hidden" name="toremove" id="toremove" value="0">
+	<textarea name="editcaption" id="editcaption" cols="100" rows="4"></textarea>
+	<br>
+    Photo#: <input name="image_number" id="image_number" type="text" value="image_number" size="1">
+	<input name="photo_id" id="photo_id" type="hidden" value="{{irec.phid}}">
+	<input name="image_id" id="image_id" type="hidden" value="/photos/{{irec.phid|slice:':6'}}/{{irec.imid}}.jpg">
+    image file suffix: 
+	<input name="image_id_suffix" id="image_id_suffix" type="text" size="3" value="{{irec.imid|slice:'17:'}}" onChange="updateURL(this)">
+     <span>
+    Verified: 
+    <select name="verified" id="verified">
+        <option value="">unspecified</option>
+{%if irec.is_verified == 'yes' %}
+	<option value="yes" selected="selected" >yes</option>
+{%else%}
+        <option value="yes">yes</option>
+{%endif%}
+{%if irec.is_verified == 'no' %}
+<option value="no" selected="selected">no</option></select>
+{%else%}
+        <option value="no">no</option>
+{%endif%}
+</select>
+                    </span>
+
+Planted?
+    <select name="is_planted" id="is_planted">
+        <option value="">unspecified</option>
+{%if irec.is_planted == 'yes' %}
+	<option value="yes" selected="selected" >yes</option>
+{%else%}
+        <option value="yes">yes</option>
+{%endif%}
+{%if irec.is_planted == 'no' %}
+<option value="no" selected="selected">no</option></select>
+{%else%}
+        <option value="no">no</option>
+{%endif%}
+     </select>   
+<br>
+LCID: <input readonly="true" name="LCID" id="LCID" value="{{irec.locality.lcid}}" title="XXX: name of lcid">
+(in this beta version changing location ID disabled)
+
+<br/>
+Note <input type="text" value='{{irec.notes|default_if_none:""}}' name="notes" style="width:50em">
+<br>
+Tags <input type="text" value='{{irec.tags|default_if_none:""}}' name="tags" style="width:45em">
+<input type="submit" value="Submit" id="submit">
+<!--<button onClick="normal_view()" id="close">Close</button><br>-->
+{% csrf_token %}
+
+</form>

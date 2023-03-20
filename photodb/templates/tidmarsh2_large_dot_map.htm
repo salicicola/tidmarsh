@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Dot map using OpenLayers (with OSM basemap and additional layers)</title>
+	<style type="text/css">
+		.olImageLoadError { 
+			/* when OL encounters a 404, don't display the pink image */ /* A: how it works ? */
+			display: none !important;
+		}
+		body { 
+			margin: 0;
+			background-color:lightgreen;
+		}	
+		#header {
+			position:absolute;
+			width:auto;
+			height:25px;
+			top:3px;
+			left:3px;
+			font-weight:bold;
+			font-size:16px;
+			color:black;
+			padding-left:1ex;
+			white-space:nowrap;
+			/* background-color:yellow; debug*/
+			/*border: dotted gray 1px; */
+		}					
+		
+		#map {
+			position:absolute;
+			width:800px;
+			height:750px;
+			top:30px;
+			left:3px;
+			border: dotted gray 1px;
+		}
+		#map_header {
+			position:absolute;
+			left:50px;
+			top:35px;
+			width:auto;
+			height:auto;
+			border: dotted gray 1px;
+			color:black;
+			font-size:18px;
+			padding-left:1ex;
+			padding-right:1ex;
+			font-weight:bold;
+			z-index:1000;
+		}
+		#map_footer {
+			position:absolute;
+			width:auto;
+			height:auto;
+			font-size:15px;
+			top: 30px;
+			left: 810px;
+			/*top:630px;
+			left:3px;
+			border: dotted gray 1px; */
+			padding:1ex;
+			background-color:beige; /* #EEEEEE; */
+			color:black;
+			z-Index:10;
+		}
+		.popup {
+		    position: absolute;
+		    padding: 5px;
+		    font-size: 8pt;
+		    z-index: 1000;
+		    background-color: white
+		}					
+	</style>
+	<!--	<script src="/scripts/OpenLayers.js"></script>-->
+	
+		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+	
+     	<script type="text/javascript">
+		function init(){
+			var geographic = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+			var mercator   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection 
+			// perhaps not in use here
+//			var pos1 = new OpenLayers.LonLat(-70.72964,41.91684).transform(geographic, mercator);
+//			var pos2 = new OpenLayers.LonLat(-70.61806,41.79947).transform(geographic, mercator);
+			var pos1 = new OpenLayers.LonLat(-70.76019,41.97966).transform(geographic, mercator); //  W , 
+			var pos2 = new OpenLayers.LonLat(-70.61806,41.79947).transform(geographic, mercator);
+			var bounds = new OpenLayers.Bounds();
+			bounds.extend(pos1);
+			bounds.extend(pos2);
+		
+			//var map = new OpenLayers.Map('map', { maxExtent: bounds });
+			var map = new OpenLayers.Map('map');
+			var osm_map = new OpenLayers.Layer.OSM();	
+			var position       = new OpenLayers.LonLat(-70.56720, 41.90217).transform( geographic, mercator); // -70.6560, 41.8660 for MSSF
+			var zoom           = 14; // 12 13 or 7  in older version
+			
+			// tidmarsh_combined.kml.xml
+			var tidmarsh_map = new OpenLayers.Layer.Vector("Tidmarsh Farms", {
+				    strategies: [new OpenLayers.Strategy.Fixed()],
+				    protocol: new OpenLayers.Protocol.HTTP({
+					url: "/static/KML/tidmarsh_combined.kml.xml",
+					format: new OpenLayers.Format.KML({
+					    extractStyles: true, 
+					    extractAttributes: true,
+					    maxDepth: 10
+					})
+				    })
+				});
+tidmarsh_map.setVisibility(true);			
+			var tidmarsh_map_vic_bbx = new OpenLayers.Layer.Vector("Tidmarsh Farms Vicinity", {
+				    strategies: [new OpenLayers.Strategy.Fixed()],
+				    protocol: new OpenLayers.Protocol.HTTP({
+					url: "/static/KML/tidmarsh_vic_bbx.kml.xml",
+					format: new OpenLayers.Format.KML({
+					    extractStyles: false, 
+					    extractAttributes: true,
+					    maxDepth: 10
+					})
+				    })
+				});
+tidmarsh_map_vic_bbx.setVisibility(true);			
+			
+/*			
+			var coastal_ponds_map = new OpenLayers.Layer.Vector("coastal ponds", {
+				    strategies: [new OpenLayers.Strategy.Fixed()],
+				    protocol: new OpenLayers.Protocol.HTTP({
+					url: "/static/KML/coastal_ponds.kml.xml",
+					format: new OpenLayers.Format.KML({
+					    extractStyles: true, 
+					    extractAttributes: true,
+					    maxDepth: 10
+					})
+				    })
+				}); 
+coastal_ponds_map.setVisibility(false);	*/
+			var acidic_peatlands_map = new OpenLayers.Layer.Vector("acidic peatlands", {
+				    strategies: [new OpenLayers.Strategy.Fixed()],
+				    protocol: new OpenLayers.Protocol.HTTP({
+					url: "/static/KML/acidic_peatlands.kml.xml",
+					format: new OpenLayers.Format.KML({
+					    extractStyles: true, 
+					    extractAttributes: true,
+					    maxDepth: 10
+					})
+				    })
+				});
+acidic_peatlands_map.setVisibility(false);
+			var priority_habitats_map = new OpenLayers.Layer.Vector("priority habitats", {
+				    strategies: [new OpenLayers.Strategy.Fixed()],
+				    protocol: new OpenLayers.Protocol.HTTP({
+					url: "/static/KML/prihab.kml.xml",
+					format: new OpenLayers.Format.KML({
+					    extractStyles: true, 
+					    extractAttributes: true,
+					    maxDepth: 10
+					})
+				    })
+				});
+priority_habitats_map.setVisibility(false);
+
+/*		var natural_communities_map = new OpenLayers.Layer.Vector("natural communities", {
+				    strategies: [new OpenLayers.Strategy.Fixed()],
+				    protocol: new OpenLayers.Protocol.HTTP({
+					url: "/static/KML/GISDATA.NATCOMM_POLY.kml.xml",
+					format: new OpenLayers.Format.KML({
+					    extractStyles: true, 
+					    extractAttributes: true,
+					    maxDepth: 10
+					})
+				    })
+				});
+natural_communities_map.setVisibility(false); */
+			
+				var vectorLayer = new OpenLayers.Layer.Vector('Records: ' + '{{ latname }}');
+				var layer_style = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+				var marker_style = OpenLayers.Util.extend({}, layer_style);
+				marker_style.strokeColor = "red";
+				marker_style.fillColor = "red";
+				marker_style.opacity = 1; /// XXX ne rabotaet
+				marker_style.graphicName = "circle"; 
+				marker_style.pointRadius = 7;
+				marker_style.strokeWidth = 1; // 3 (1 tonshe, 3 tolshe border)
+	
+			{% for p in points %}				
+				var point = new OpenLayers.Geometry.Point({{ p.0 }}, {{ p.1 }}).transform(geographic, mercator);
+				var pointFeature = new OpenLayers.Feature.Vector(point,null, marker_style);
+				pointFeature.attributes = { 
+					'imid': '{{ p.2 }}',
+					'gps': '{{ p.1 }} {{ p.0 }}',
+					"description": "{{ p.3 }}"
+				}
+				vectorLayer.addFeatures([pointFeature]);
+			{% endfor %}					
+										
+			map.addLayer(osm_map);
+			map.setCenter(position, zoom );	
+map.addLayer(tidmarsh_map);
+map.addLayer(tidmarsh_map_vic_bbx);			
+	//		map.addLayer(ponds_map);
+//			map.addLayer(coastal_ponds_map);
+			map.addLayer(priority_habitats_map);
+//			map.addLayer(natural_communities_map);
+	//		map.addLayer(coastal_map);
+	//		map.addLayer(pine_barrens_map);
+	//		map.addLayer(pine_barrens2_map);
+			//map.addLayer(streams_map);
+			map.addLayer(acidic_peatlands_map);
+	
+			map.addLayer(vectorLayer);
+			
+			map.addControl(new OpenLayers.Control.LayerSwitcher()); // 
+			map.addControl(new OpenLayers.Control.ScaleLine());
+			
+		//www.peterrobins.co.uk	with modifications
+			function formatLonlats(lonLat) {
+			    var lat = lonLat.lat;
+			    var long = lonLat.lon;
+			    var ns = OpenLayers.Util.getFormattedLonLat(lat);
+			    var ew = OpenLayers.Util.getFormattedLonLat(long,'lon');
+			    return ns + ', ' + ew + ' (' + (Math.round(lat * 10000) / 10000) + ', ' + (Math.round(long * 10000) / 10000) + ')';
+			}					
+			map.addControl(new OpenLayers.Control.MousePosition( {id: "ll_mouse", formatOutput: formatLonlats, displayProjection: new OpenLayers.Projection("EPSG:4326")}));
+			 var layers = map.getLayersByClass('OpenLayers.Layer.Vector');  
+			 var selectControl = new OpenLayers.Control.SelectFeature(layers, {
+			    callbacks: {
+				over: featureOver,
+				out: hideTooltip
+			    }
+			 });
+			 
+			/// XXX to work only with photos layer, specific attribute used
+			selectControl.onSelect = function(feature) {
+			    if (feature.attributes.clickable != 'off') {
+				if (feature.attributes.imid && feature.attributes.imid.length > 17) {
+					// XXX to add {{ fid }}/{{ spid }}  for captions
+					var url = "/servlet/GetImage?id=" + feature.attributes.imid; // http://salicicola.com ## FIXME
+					window.open(url, 'xxx', 'width=700,height=500');	
+				}
+			    }
+			};
+		       function featureOver(feature) {
+			    // 'this' is selectFeature control
+			    text = '';
+			    offset = 0;
+			    if (feature.attributes.imid) {
+				text += feature.attributes.imid + "<br/>" + feature.attributes.gps + "<br/>" + feature.attributes.description;
+				offset = 40;
+			    }
+			    else {
+			    	if (feature.attributes.gps) {
+			    		text += feature.attributes.gps + "<br/>" + feature.attributes.description;
+			    	}
+			    	else {
+					text = feature.attributes.description || feature.attributes.name || feature.attributes.title || feature.attributes.id;
+				}
+			    }
+			    var xy = this.map.getControl('ll_mouse').lastXy || { x: 0, y: 0 };
+			    showTooltip(text, xy.x, xy.y, offset);
+			}  
+			map.addControl(selectControl);
+			selectControl.activate();
+			// end of www.peterrobins.co.uk	(within init()		
+		}	
+
+		//www.peterrobins.co.uk	      
+		// non-OL-related functions
+		function getViewport() {
+		    var e = window, a = 'inner';
+		    if ( !( 'innerWidth' in window ) ) {
+			a = 'client';
+			e = document.documentElement || document.body;
+		    }
+		    return { width : e[ a+'Width' ], height : e[ a+'Height' ] }
+		}
+		
+		// offset added, to enable clicking
+		function showTooltip(ttText, x, y, offset) {
+		    var windowWidth = getViewport().width;
+		    var o = document.getElementById('tooltip');
+		    o.innerHTML = ttText;
+		    if(o.offsetWidth) {
+			var ew = o.offsetWidth;
+		    } else if(o.clip.width) {
+			var ew = o.clip.width;
+		    }
+		    y = y + 16;
+		    x = x - (ew / 4);
+		    if (x < 2) {
+			x = 2;
+		    } else if(x + ew > windowWidth) {
+			x = windowWidth - ew - 4;
+		    }
+		    x += offset;
+		    o.style.left = x + 'px';
+		    o.style.top = y + 'px';
+		    o.style.visibility = 'visible';
+		}
+		function hideTooltip() {
+		    document.getElementById('tooltip').style.visibility = 'hidden';
+		}       
+		// end of www.peterrobins.co.uk	
+       </script>
+    </head>
+    <body onload="init()"><!-- {{ head }} -->
+        <div id="header">
+        	Plant Records from Tidmarsh Farm and Vicinity
+        	(layers from OSM and MassGIS/NHESP)
+        </div>
+    	<div id="map"></div>
+	<div id="map_header"><i>{{ latname }}</i>
+		{% if colname %}
+			({{ colname }})
+		{% endif %}	
+	</div>
+	<div class="popup" id="tooltip" style="visibility: hidden"></div>
+<!--	<div id="map_footer">
+		To see photos, click on dots.
+{{ footer }} 
+	</div>-->
+    </body>
+</html>

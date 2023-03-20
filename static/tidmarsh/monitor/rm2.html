@@ -1,0 +1,315 @@
+<!DOCTYPE html><html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="cache-control" content="no-cache"><meta http-equiv="expires" content="0"><meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"><meta http-equiv="pragma" content="no-cache"><title>Salicicola: Plants of Tidmarsh Farms to monitor</title><style type="text/css">
+		h1 {
+			margin-bottom:0;	
+			margin-top:0px;
+		}
+		h2 {
+			margin-top:0;
+		}
+		h2.header {
+			margin-bottom:0;font-size:27px;
+		}
+		h2.subheader {
+			margin-top:0;margin-bottom:0.5ex;font-weight:normal;font-size:20px; 
+		}
+		h2.group_header {
+			 margin-bottom:0;margin-top:2ex;
+		}
+		h3 {
+			margin-bottom:0;
+		}
+		div.summary {
+			margin-left:2em;max-width:95ex;
+		}	
+		div.species {
+			margin-left:6ex;
+			text-indent:-4ex
+		}
+		i.species {
+			font-weight:bold;
+		}
+		ul {
+			margin-top:0;
+		}
+		img.map {
+			float:right;
+			width:350px;
+			/*height:300px;*/
+			border-style:solid;
+			border-width:1px;
+			margin:1ex;
+			padding:0;
+		}
+		body {
+			max-width:1360px;
+			background-color:#F0FFF0;
+			color: #8B0000;
+			padding:1ex;
+		}
+		a {
+			color:#8B0000;
+		}
+	</style><script type="text/javascript">
+		w = null;
+		mapserver = 'http://geo.salicicola.com';
+		function open_tidmarsh_map(pid) {
+			if (w) {
+				if (! w.closed) {
+					w.close();
+				} 
+			} 
+			url = mapserver + '/map/tidmarsh2/plant/' + pid; 
+			w = open(url, 'none', 'width=920,height=810,left=5,top=5'); 
+			w.focus();
+			return false;
+		}
+		function open_preview_map(pid) {
+				if (w) {
+					if (! w.closed) {
+						w.close();
+					} 
+				} 
+				url = mapserver + '/tidmarsh/map/preview/plant/' + pid;
+				w = open(url, 'none', 'width=390,height=520,top=200,left=600');  
+				w.focus();
+				return false;
+		}
+		function open_image(url) {
+			if (w) {
+				if (! w.closed) {
+					w.close();
+				} 
+			} 
+			w = open(url, 'none', 'width=920,height=810,left=5,top=5'); 
+			w.focus();
+			return false;
+		}
+		function open_entryform(url) {
+			if (w) {
+				if (! w.closed) {
+					w.close();
+				} 
+			} 
+			w = open(url, 'none', 'width=600,height=600,left=5,top=5'); 
+			w.focus();
+			return false;
+		}			
+	</script><style type="text/css">
+
+@media only screen and (min-width: 1024px) {
+    body {
+    }
+    #left-column {
+    	float:left;
+    	width:536px; /* 530 */
+    	font-size:88%;
+    	padding-right:1ex;
+    }
+    iframe#right_column {
+    	float:right;
+    	margin-left:0px;
+    	width:440px; /* FIXME actual page size if hardcoded ~600 px? */
+    	height:710px;
+    }
+}
+@media only screen and (min-width: 1049px) {
+    body {
+    }
+    #left-column {
+    	float:left;
+    	padding-right:1ex;
+    	width: 546px; /* 550  */
+    	font-size:88%;
+    }
+    iframe#right_column {
+    	float:left;
+    	margin-left:0px;
+    	width:454px;  /* FIXME actual page size if hardcoded ~600 px? */
+    	height:710px;
+    }
+}		
+
+@media only screen and (min-width: 1098px) {
+    body{
+    }
+    #left-column {
+    	float:left;
+    	padding-right:1ex;
+    	width: 546px; /* 550  */
+    	font-size:88%;
+    }
+    iframe#right_column {
+    	float:left;
+    	margin-left:0px;
+    	width:500px;  /* FIXME actual page size if hardcoded ~600 px? */
+    	height:710px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    body {
+    }
+	#left-column {
+		float:left;
+		width:630px; /* 730 */
+		padding-right:1ex;
+	}
+	iframe#right_column {
+		float:left;
+		margin-left:3px;
+		width:600px; /* 500px */
+		height:700px; /* 670 */
+	}
+}					
+
+@media only screen and (min-width: 1400px) {
+ body {
+    }
+	#left-column {
+		float:left;
+		width:700px; /* 730 */
+		padding-right:1ex;
+	}
+	iframe#right_column {
+		float:left;
+		margin-left:3px;
+		width:600px; /* 500px */
+		height:700px; /* 670 */
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	#left-column {
+		float:left;
+		width:730px; /* 730 */
+		padding-right:1ex;
+	}
+	iframe#right_column {
+		float:left;
+		margin-left:3px;
+		width:600px; /* 500px */
+		height:700px; /* 670 */
+	}
+}
+@media only screen and (min-width: 1600px) {
+	#left-column {
+		float:left;
+		width:800px; /* 730 */
+		padding-right:1ex;
+	}
+	iframe#right_column {
+		float:left;
+		margin-left:3px;
+		width:600px; /* 500px */
+		height:700px; /* 670 */
+	}
+}
+body {
+color:#333;
+background-color:#FFFFFF;
+}
+h2, a {
+color:#333;
+/* color:#00C492; */
+}
+				</style><script type="text/javascript">
+					IW = window.innerWidth;
+					iframe_src = "/photodb/tidmarsh/entry/";
+					function init() {
+						if (IW > 1023) {
+							ifr = document.createElement("iframe");
+							ifr.setAttribute("id", "right_column");
+							ifr.setAttribute("width", "440");
+							ifr.setAttribute("height", "690");
+							ifr.setAttribute("name", "report_form");
+							ifr.setAttribute("src", iframe_src);
+							document.getElementsByTagName('body')[0].appendChild(ifr);
+							divs = document.getElementsByTagName("div");
+							for (i = 0; i < divs.length; i++) {
+								d = divs[i];
+								if (d.className == 'species') {
+									aaa = d.getElementsByTagName("a");
+									for (j = 0; j < aaa.length; j++) {
+										ele = aaa[j];
+										ele.setAttribute("target", "report_form");
+									}
+								}
+							}
+						// adjust:
+						}
+						try {
+							document.getElementById("debug").appendChild(document.createTextNode(IW));
+						}
+						catch (e) {}
+					}
+				</script></head><body style="max-width:3000px" onload="init()"><div id="left-column"><h2 class="header">
+					 Tidmarsh Plants to Monitor
+				</h2><div class="summary">	
+List not exhaustive.
+					
+					
+					Entry form is still at draft stage.
+				</div><h2 class="group_header" style="margin-top:0"><a href="r.html">Rare and Watch-Listed (planted or not)</a></h2><h2 class="group_header" style="margin-top:0"><a href="pn.html">Planted: New for Tidmarsh</a></h2><h2 class="group_header" style="margin-top:0"><a href="po.html">Planted: Reinforced (locally uncommon)</a></h2><h2 class="group_header" style="margin-top:0"><a href="rm.html">Invasive Plants (to be removed)</a></h2><h2 class="group_header" style="margin-top:0"><a href="rm2.html">More Invasive and Other Unwanted</a></h2><div class="species"><i class="species">Alliaria petiolata</i> (garlic mustard) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=10101&amp;plantname=Alliaria petiolata (garlic mustard)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Artemisia vulgaris</i> (common wormwood, mugwort) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=7021&amp;plantname=Artemisia vulgaris (common wormwood, mugwort)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Convallaria majalis</i> (lily-of-the-valley) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=5159&amp;plantname=Convallaria majalis (lily-of-the-valley)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Cynanchum louiseae</i> (black swallowwort) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=7163&amp;plantname=Cynanchum louiseae (black swallowwort)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Hypochaeris radicata</i> (hairy cat's-ear) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=10115&amp;plantname=Hypochaeris radicata (hairy cat's-ear)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Jasione montana</i> (sheep's bit) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=12800&amp;plantname=Jasione montana (sheep's bit)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Lythrum salicaria</i> (purple loosestrife) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=3490&amp;plantname=Lythrum salicaria (purple loosestrife)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Phalaris arundinacea</i> (reed canarygrass) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=5064&amp;plantname=Phalaris arundinacea (reed canarygrass)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Plantago aristata</i> (bracted plantain) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=12684&amp;plantname=Plantago aristata (bracted plantain)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Robinia pseudoacacia</i> (black locust) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=3437&amp;plantname=Robinia pseudoacacia (black locust)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Rumex crispus</i> (curly dock) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=12550&amp;plantname=Rumex crispus (curly dock)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Rumex obtusifolius</i> (red-veined dock) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=13371&amp;plantname=Rumex obtusifolius (red-veined dock)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Tanacetum vulgare</i> (common tansy) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=7143&amp;plantname=Tanacetum vulgare (common tansy)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Verbascum lychnitis</i> (white mullein) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=16294&amp;plantname=Verbascum lychnitis (white mullein)&amp;category=m">add a record</a>]	
+		</div><div class="species"><i class="species">Verbascum thapsus</i> (common mullein) 
+		— 
+		
+			[<a href="/tidmarsh/entry/?spid=4048&amp;plantname=Verbascum thapsus (common mullein)&amp;category=m">add a record</a>]	
+		</div><h2 class="group_header" style="margin-top:0"><a href="loc.html">Report by Area (prefill location)</a></h2><div class="species"><b style="color:red">Testing: only small places, to check coord and names</b></div><hr align="left" width="33%"><div><span title="0.3.1">Draft</span> (<i>16 April 2018</i>)
+		<br><span style="display:none">#0.3.1 [47] (2018-04-16T09:38:00)</span></div><div id="debug" style="display:none">
+					debug: 
+					</div></div></body></html>

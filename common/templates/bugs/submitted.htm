@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Salicicola: Bugs Entry</title>
+		{%include "bugs/bug_head.htm" %}	
+		<style type="text/css">
+			#eform{margin: 20px auto;width: auto;}
+			#eform table {
+				margin: 20px auto;
+				width: auto;
+			}
+			#eform table td, th{
+				background-color:#DDDDDD;
+				padding:5px;
+			}
+		</style>
+	</head>
+	<body>
+<div id="eform">
+		<h3>Unless authorized, only uncommitted records submitted by user [{{submitted}}] are shown &#8212; logged as [{{request.user}}] &#8212; total unsubmitted: {{total}}</h3>
+		<table border="0">
+			<tr>
+				<th>****</th>
+				<th>User</th>
+				<th>Actual User</th>
+				<th>Component</th>
+				<th>Summary</th>
+				<th>Description</th>
+				<th>URL</th>
+				<th>Severity</th>
+				<th>Created</th>
+			</tr>
+			{%for rec in records%}
+					<tr>
+						<td><a target="_blank" href="/bugs/edit?id={{rec.actual_user}}::{{rec.created}}">edit</a></td>
+						<td>{{rec.reporter}}</td>
+						<td>{{rec.actual_user}}</td>
+						<td>{{rec.component}}</td>
+						<td>{{rec.summary}}</td>
+						<td>{{rec.notes}}</td>
+						<td>{{rec.url}}</td>
+						<td>{{rec.severity}}&nbsp;</td>
+						<td>{{rec.created}}</td>
+					</tr> 
+			{%endfor%}
+		</table>
+</div>
+	</body>
+</html>

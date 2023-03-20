@@ -1,0 +1,37 @@
+.FloatStyle {
+	font-size: 12pt;
+	background-color: rgb(255, 255, 245);
+	padding: 6px;	
+	margin-top: 25px;
+}
+span.FloatStyle {
+	visibility: hidden;
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+
+}
+div.FloatStyle {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+A:link {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent
+}
+A:visited {
+	COLOR: #D2691E; 
+	BACKGROUND-COLOR: transparent
+}
+A:active {
+	COLOR: #ff0000; 
+	BACKGROUND-COLOR: transparent
+}
+A:hover {
+	COLOR: #ff0000; 
+	BACKGROUND-COLOR: transparent
+}

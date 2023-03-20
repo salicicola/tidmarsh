@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+<meta http-equiv="pragma" content="no-cache">
+<title>test form for mobile</title>
+<style type="text/css">
+body, form, ul, li, p, h2, h3, h4, h5{margin: 0;padding: 0;}
+body {background-color: #ffffff; color: #666; }
+#eform{margin: 20px auto;width: 580px;}
+#eform h2, h3 { /*font-size: 14px; */ margin: 0 0 0px;text-align:center;color:#00C492;}
+#eform fieldset{margin: 0 0 10px;padding: 10px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+#eform ol{list-style-type: none;padding: 0;margin: 0;}
+#eform li{margin: 0 0 12px;position: relative;}
+#eform label{width: 15ex;display: inline-block;vertical-align: top;}
+#eform fieldset textarea{display: inline-block;width: 250px;border: 1px solid #00C492;padding: 3px 26px 3px 3px;-moz-transition: background-color 1s ease;-webkit-transition: background-color 1s ease;-o-transition: background-color 1s ease;transition: background-color 1s ease;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; resize:none; }
+legend{ color:#00C492;}
+input[type="submit"]{background: #00C492; border:none; width:200px; margin:auto;  padding:5px; border-radius:5px; color:#fff; font-weight:bold; cursor:pointer;float:left;width:15ex;background-color:#00C492;color:#FFFFFF;}
+
+input[type="button"]{background: #00C492; border:none; width:40ex; margin:auto;  padding:5px; border-radius:5px; color:#fff; font-weight:bold; cursor:pointer;}
+
+#eform fieldset select{ width: 280px; padding: 3px; }
+
+@media only screen and (max-width: 590px) {
+    body {
+/*        background-color: lightblue; */
+    }
+    #eform {margin: 0px auto;width: 100%;}/* auto */
+    #eform label{width: 15ex;display: block;} 
+    #eform input[type="submit"] {display: block; width:32ex; float:none; margin:0;margin-bottom:3px;}
+    #eform input[type="button"] {display: block; width:32ex; float:none; margin:0} 
+    #eform li {margin: 0 0 3px; }
+    
+}
+
+
+</style>
+<script type="text/javascript">
+var xData = null;
+var xProcessor = null;
+
+function getXHR () {
+	try {return new XMLHttpRequest();} catch (e) {}
+//	try {return new ActiveXObject("Msxml2.XMLHTTP.6.0");}	catch (e) {}
+//	try {return new ActiveXObject("Msxml2.XMLHTTP.3.0");}	catch (e) {}
+//	try {return new ActiveXObject("Msxml2.XMLHTTP");}	catch (e) {}
+//	try {return new ActiveXObject("Microsoft.XMLHTTP");}	catch (e) {}
+	alert("XMLHttpRequest not supported or disabled");
+	return null;
+}
+
+var xhr = getXHR();
+if (xhr) {
+	xhr.open("GET", "/static/XHR/species.xml");
+	xhr.overrideMimeType("text/xml");
+	xhr.onreadystatechange = function () { handleXML(xhr) };
+	xhr.send(null);
+	var xhr2 = getXHR();
+	xhr2.open("GET", "/static/XHR/names.xsl", "true");
+	xhr2.overrideMimeType("text/xml");
+	xhr2.onreadystatechange = function () { handleXSLT(xhr2) };
+	xhr2.send(null);
+}	
+function handleXML(xhr) {			
+	if (xhr.readyState == 4) {
+		if (xhr.status == 200) {
+			xData = xhr.responseXML;
+		}
+		else {
+		}
+	}
+	else {
+	}
+}
+function handleXSLT(x) {			
+	if (x.readyState == 4 && x.status == 200) {
+		try {
+			xProcessor = new XSLTProcessor();
+			var xslData = x.responseXML;				
+			xProcessor.importStylesheet(xslData);
+		}
+		catch (e) {
+			alert(e);
+		}
+	}
+}
+
+function updateSelect(txt) {
+	document.getElementById("plant_id").style.visibility='visible';
+	document.getElementById('li.plant_id').style.height='auto';
+	if (xData && xProcessor) {
+		// FIXME: to check if valid XML (XSL not needed, if xProcessor != null) ?
+		try {
+			xProcessor.clearParameters();
+			xProcessor.setParameter(null, "text", txt);
+			tObject = document.getElementById('plant_id');			// FIXME
+//			tObject.style.display="";
+			var result = xProcessor.transformToFragment(xData, document);
+			//alert(result);
+			tObject.innerHTML = "";
+			tObject.appendChild(result);
+
+		}
+		catch (e) {
+			alert(e);
+		}
+	}    
+	else {
+		//
+	}
+}
+function updateName(selectO) {
+	document.getElementById('plantname').value = selectO.options[selectO.selectedIndex].innerHTML;
+	document.getElementById('plantname').focus()
+	selectO.style.visibility='hidden';
+	document.getElementById('li.plant_id').style.height=0;
+}			
+
+var spid = '{{plant_id}}';
+var pname = '{{plantname}}';
+//var category = '{{category}}';
+//alert(spid + ' ' + category);
+
+function init_select() {
+	//alert(spid);
+	//alert(pname);
+	trg = document.getElementById("plant_id")
+	if (spid && plantname) {
+		opt = document.createElement("option");
+		opt.setAttribute("value", spid);
+		opt.setAttribute("selected", 'selected');
+		opt.appendChild(document.createTextNode(pname));
+		trg.appendChild(opt);
+	}
+	trg.style.visibility='hidden';
+	//alert('done:' + trg.innerHTML);
+}
+
+//alert('ready?');
+
+function validateForm() {
+	frm = document.forms[0];
+	if (document.getElementById('plant_id').options.length == 1) {
+		document.getElementById('plant_id').options[0].setAttribute("selected", 'selected');
+		return true;
+	}
+	else {
+		if (document.getElementById('plant_id').value)  {
+			//alert ("has value " + document.getElementById('plant_id').value);
+			return true
+		} 
+		else {
+			res = prompt("Plant name was not properly selected. Press Cancel to continue edit", "save anyway")
+			//alert (res);
+			if (res) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+}
+
+
+</script>
+
+</head>
+<body onload="init_select()">
+ <form id="eform" method="get" enctype="multipart/form-data" action="/photodb/tidmarsh/entry/save/" > <!-- onsubmit="return validateForm()" -->
+ {%csrf_token%}
+ <h3>Monitoring Tidmarsh Plants XXX</h3>
+ <!-- FIXME: particularly lcid -->
+ <input type="hidden" name="category" id="category" value="m"> <!-- needed, nowhere else used -->
+ <input type="hidden" name="uid" value="{{uid}}"/> <!-- needed, nowhere else in inputs -->
+ <input type="hidden" name="actual_uid" value="{{actual_uid}}"/>
+ <input type="hidden" name="rid" value="{{rid}}"/> <!-- needed, nowhere else in inputs -->
+ <input type="hidden" name="lcid" value="{{lcid}}"> <!-- TO FIX, needed but without any connection to location -->
+ <input type="hidden" name="lat" value="{{lat}}"> <!-- needed in the form combined values,not to be saved -->
+ <input type="hidden" name="lon" value="{{lon}}"> <!-- needed in the form combined values,not to be saved -->
+ <!-- <input type="hidden" name="created" value="{{created}}"> not needed: in the form as modified -->
+  <fieldset>
+   <legend>
+   	<!--Monitoring Tidmarsh Plants-->
+   	[ {{uid}} {%if rid %} &#8212; edit record #{{rid}}{%else%} &#8212; new record {%endif%} ]
+   </legend>
+   <ol>
+     <li>
+     	<label for="plant_id" style="width:50ex">Type and then select <!--valid--> plant name<label>
+     <li>
+     <input title="{{plant_id}}" type="text" id="plantname" name="plantname" autocomplete="off" value="{{plantname}}" onkeyup="updateSelect(this.value)" />
+     <!-- onblur="alert(document.getElementById('plant_id').innerHTML)" -->
+    </li>
+    <li id="li.plant_id" style="height:0">
+     	<select id="plant_id" name="plant_id" size="2" onchange="updateName(this)"></select>
+     <!-- alert(this.options[this.selectedIndex].innderHTML) -->
+    </li>
+    <li>
+    <label for="location">Location</label>
+    <input title="{{lcid}}" type="text" id="location" name="location" value="{{location}}" />
+    </li>
+    
+    <li title="explicit coordinates">
+    	<label for="coordinates">Coordinates</label>
+		<input name="coordinates" value="{{coordinates}}">
+	</li>
+    {%if lat and lon%}
+	<li>
+	  <label>GPS from photo</label>
+          <input disabled="true" value="{{lat}} {{lon}}"/>
+	</li>
+    {%endif%}
+    
+    <li>
+    <label for="notes">Notes</label>
+    <textarea id="notes" name="notes">{{notes}}</textarea>
+    </li>
+    
+    <li><label for="file">Upload photo</label>
+    <input type="file" id="file" name="file" accept="image/*;" />
+    {% if phidcode %}
+    {%else%}
+    <!--#<input name="newnum" size="3"/> (empty)-->
+    {%endif%}
+</li>
+{%if rid %}
+    <li>
+    <label for="files">Uploaded</label></td>
+		<textarea readonly="true" name="files" style="background-color:#EEEEEE">{{files}}</textarea> 
+    </li>
+{%endif%}
+    <li>
+    <label for="photo_url">Photo URL/ID</label>
+		<input name="photo_url" value="{{photo_url}}">
+    </li>
+    {%if created %}
+   <li>
+	<label>Observed</label>
+	<input name="observed" value="{{observed}}"/>
+    </li>    
+    
+    <li>
+	<label>Modified</label>
+	<input disabled="true" value="{{created}}"/>
+    </li>
+      {%endif%}
+    <li><label>
+    	<input type="submit" value="Submit"/>
+    	</label>
+        {%if rid %}
+    	<a target="_blank" style="text-decoration:none" href="/tidmarsh/entry/view/{{uid}}/{{rid}}/"><input  type="button" value="Review this &amp; other records"/></a>
+<!--<br clear="all"/>-->
+<a style="text-decoration:none" href="/photodb/tidmarsh/entry"><input style="margin-top:3px;" type="button" value="New record"/></a>
+    	{%endif%}
+    </li>
+   <!--   {%if created %}
+    <li>
+	<label>Modified</label>
+	<input value="{{created}}"/>
+    </li>
+      {%endif%} -->
+   </ol>
+  </fieldset>
+  
+  <div style="font-size:90%;padding:1ex;">
+        <!--Some fields set automatically, including
+    	observation date (if necessary, can be changed later), 
+    	user ID (according to login) and, if possible, coordinates (from first uploaded photo with GPS info).
+    	Instead of uploading photo, one can provide URL to photo(s) kept somewhere else.
+        Preferable format for manually added coordinates&#8212;digital latitude and longitude, space separated.
+        Record # not permanent, refers to uncommitted records.
+        Guest account (without login) allowed temporarily for testing purpose.-->
+  </div>
+<hr/>
+<div style="font-size:85%;color:#888888;padding:1ex;">
+Version {{version}} &#8212; using Python/Django #{{django_version}} 
+<!--Running Python/Django #{{django_version}}. Draft {{version}} <br/>-->
+</div>
+   </form>
+</body>
+</html>

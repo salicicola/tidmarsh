@@ -1,0 +1,237 @@
+body, td {
+	background-color: #F0FFF0;
+	COLOR: #8B0000; 
+}
+
+body.frontPage {
+	color: #006400;
+	text-align: center;
+	border-width: 6px;
+	border-color: #deb887;
+	border-style: ridge;
+}
+
+div.siteTitle {
+	font-family: "Lucida Handwriting", cursive;
+	font-style: italic;
+	color: #D2691E;
+	font-size: xx-large;
+	font-weight: 900;
+}
+
+div.siteSubTitle {
+	font-family: "Lucida Handwriting", cursive ;
+	font-style: italic;
+	color: #D2691E;
+	font-size: large;
+	font-weight: 700;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.siteTitleNote {
+	color: rgb(225,0,0);
+	font-size: x-small;
+	font-weight: 700;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;	
+}
+
+body.frontPage .siteTitleNote {
+	font-family: "Lucida Handwriting", cursive ;
+	font-style: italic;
+	color: rgb(225,0,0);
+	font-size: x-small;
+	font-weight: 700;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;	
+}
+
+
+
+
+div.SiteContentTitle {
+	font-family: "Lucida Handwriting", cursive ;
+	font-style: italic;
+	color: darkred;
+	font-size: medium;
+	font-weight: 700;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+table.tableContents {
+	border: 0;
+}
+
+td {
+	vertical-align: top;
+}
+
+td.contentsSection {
+	font-weight: 700;
+}
+
+td ul {
+	margin-bottom: 0.1em;
+	margin-top: 0.1em;
+	margin-left: 0.5em;
+	list-style-type: none;
+}
+
+td ul li {
+	margin-top: 0.3em;
+	margin-left: 0.1em;
+}
+
+td ul li ul {
+	margin-top: 0.1em;
+	margin-left: 1.5em;
+	padding-left: 0.1em;
+	list-style-type: square;
+}
+
+td ul li ul li {
+	margin-top: 0.2em;
+	margin-left: 0.5em;
+	padding-left: 0.1em;
+}
+
+
+
+A:link {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent
+}
+A:visited {
+	COLOR: #D2691E; 
+	BACKGROUND-COLOR: transparent
+}
+A:active {
+	COLOR: #ff0000; 
+	BACKGROUND-COLOR: transparent
+}
+A:hover {
+	COLOR: #ff0000; 
+	BACKGROUND-COLOR: transparent
+}
+
+table.footer {
+	border: 0; 
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+body.frontPage span.refSiteName {
+	visibility: hidden;
+}
+body.frontPage span.refHome {
+	visibility: hidden;
+}
+
+body.frontPage span.refFeedBack {
+	visibility: hidden;
+}
+
+body.datedPage span.updated {
+	visibility: hidden;
+}
+
+body.submittedPage span.updated {
+	visibility: hidden;
+}
+
+
+
+
+
+.frontPageImages {
+	overflow: hidden; 
+	height: 125px;
+	margin: 0px;
+}
+
+
+body.submittedPage {
+	color: black;
+}
+DIV.Title {
+	 font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	color: black;
+}
+
+
+.marked {
+	background-color: lightsteelblue;
+	color: black;
+	font-weight: bold;
+}
+
+/* end of main.css beginning of winter_key.css -- */
+div.divAll {
+
+}
+
+
+div.divEven {
+
+}
+div.divOdd {
+
+}
+div.subDivA {
+  margin-left: 0em;
+  border-left: 0em;
+  padding-left: 2em;
+  text-align: justify;
+  margin-top: 0.5em;
+}
+div.subDivB {
+  margin-left: 0em;
+  border-left: 0em;
+  padding-left: 2em;
+  text-align: justify
+}
+div.subDivRef { 
+	text-align: right;
+	font-weight: bold ;
+}
+span.firstLine {
+	width: 3em; 
+	margin-left: 0em;
+	border-left: 0em;
+	padding-left: 0em;
+	position: absolute; 
+	left: 0.5em;
+	font-weight:bold; 
+}
+
+h2.header {
+	margin-bottom:0; color:#8B0000;
+}
+
+A.header:link {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent;
+	text-decoration:none;
+}
+A.header:visited {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent;
+	text-decoration:none;
+}
+A.header:active {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent;
+	text-decoration:none;
+}
+A.header:hover {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent;
+	text-decoration:none;
+}
+

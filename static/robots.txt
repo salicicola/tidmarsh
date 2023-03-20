@@ -1,0 +1,24 @@
+User-Agent: *
+Disallow: /projects
+Disallow: /BUILD
+Disallow: /ARHIVE
+Disallow: /CSS
+Disallow: /XML
+Disallow: /XSL
+Disallow: /scripts
+Disallow: /images
+Disallow: /slides
+Disallow: /thm
+Disallow: /temp
+Disallow: /preview
+Disallow: /PBCI
+Disallow: /AS
+Disallow: /bioimages
+Disallow: /test
+Disallow: /willows
+Disallow: /drafts
+Disallow: /photos/plants/XML
+Disallow: /photos/199905
+Disallow: /photos/200204
+Disallow: /photos/200407
+

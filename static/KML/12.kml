@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>12.kml</name>
+		<Style id="waypoint">
+			<IconStyle>
+				<color>ffffffff</color>
+				<scale>1</scale>
+				<Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href></Icon>
+				<hotSpot x="0.5" xunits="fraction" y="0.5" yunits="fraction" />
+			</IconStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3> <div style="margin-top:8px;">$[description]</div>]]></text>
+			</BalloonStyle>
+		</Style>
+	<Placemark>
+		<name>12</name>
+		<LookAt>
+			<longitude>-70.56980854671743</longitude>
+			<latitude>41.90828294871841</latitude>
+			<altitude>0</altitude>
+			<heading>15.23092049793067</heading>
+			<tilt>20.27778820838249</tilt>
+			<range>481.6541772006101</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#waypoint</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>-70.56980854671743,41.90828333333333,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

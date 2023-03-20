@@ -1,0 +1,31 @@
+/* ******* starts hanging-indent style ******* */
+.biblref {
+  margin-left: 1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  margin-right: 1em;
+ 
+  padding-bottom: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  padding-left: 2.5em; /* ****** $indent + $padding********* */
+  background-color: transparent;
+  text-indent: -2em;
+  /* alt. color as inline style */
+}
+.biblref .firstword {
+/*  position: relative; 
+  width: 2em; */ /* ****** $first_word_width ********* */
+  background-color: transparent;
+/*  padding-left: 2em;  ******  $indent ********* */
+ /* text-indent: -2em;  ****** -$indent ********* */
+  /* THREE TIMES: TO CHECK it in all available browsers */
+  /* done: IE6.0  */
+  font-weight: bold;
+}/*
+.biblref span.others {
+  position: relative; 
+  width: auto; 
+} */
+/* ******* end of hanging-indent style ******* */
+

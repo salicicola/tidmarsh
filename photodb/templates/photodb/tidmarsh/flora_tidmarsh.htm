@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Geo Salicicola Tools: Flora Analyzer (using OpenLayers and no other GIS app)</title>
+        {% include 'analyzer_css_tdm.htm' %} <!-- same for all -->
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <script type="text/javascript">
+       			{% include 'analyzer_js_tdm.js' %} 
+        </script>
+    </head>
+    <body onload="init()">
+    <!-- removed humanize --><!-- hence, removed |intcomma 3 times -->
+<div id="page_header" style="white-space:nowrap">
+	Geo Salicicola Tools. 
+	<span title="">Tidmarsh Flora (Layers from OSM, MassGIS/NHESP, etc.) Draft {{version}}</span>
+</div>
+    	<div id="map"></div>
+	<div id="map_header"> 
+		{% if show_records %}
+			Total {{ total_photos }} photos 
+			from {{ total_dots }} dots can be analyzed
+		{% endif %}
+	</div>
+	<div class="popup" id="tooltip" style="visibility: hidden"></div><!-- FIXME: not in use -->
+	<div id="map_footer" style="top:30px;width:500px;height:600px;overflow: scroll;border: dotted gray 1px;color:darkred;">
+		{{ found|length }} species found/photographed within area
+		{% if method == 'list' %}
+		    <span style="color:gray" title="FIXME: boxes may overlap"> at most </span>
+		{% else %}
+		ca.  
+		{% endif %}
+		{{ square_meters }}  sq. meters
+		<br/>
+		{% for item in all_species %}
+			<div style="margin-left:1em"><i>{{item.0}}</i>: 
+<a 
+onclick="w=open('/photodb/tidmarsh/map/{{item.2}}/', 'm', 'width=975,height=840,top=15,left=15');w.focus();return false;"
+target="_blank" href="/photodb/tidmarsh/map/{{item.2}}/">{{item.2}}</a>
+<!--<a 
+onclick="w=open('/tidmarsh/map/{{item.2}}', 'm', 'width=975,height=840,top=15,left=15');w.focus();return false;"
+target="_blank" href="/flora/tidmarsh/map/plant/{{item.2}}">{{item.2}}</a>--></div>
+		{% endfor %}
+<!--		{% for item in lastfound %}
+			<div style="margin-left:1em"><i>{{item}}</i></div>
+		{% endfor %}
+		<hr/>
+		XXX
+		<hr/>
+		{{ all_species }}-->
+		<hr/>
+		Using data set last modified <i>{{data_modified}}</i>
+	</div>
+	{% include 'analyzer_form_tdm.htm' %} <!-- replaceable -->
+    </body>
+</html>
+

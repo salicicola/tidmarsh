@@ -1,0 +1,52 @@
+{% load humanize %}
+<h2 class="header">
+	Vascular Plants of Tidmarsh Farms and Vicinity (Plymouth, Massachusetts)
+	<!-- XXX another name -->
+</h2>
+<img class="map" src="/static/tdm_coverage.png" alt="Tidmarsh Vicinity (bounding box)"/>
+<h2 class="subheader">
+	<!--	September 2011—September 2017 — --> A. Zinovjev &amp; I. Kadis
+</h2>
+<div class="summary" style="padding-bottom:1ex">		
+	Initial plant list was based on our survey, mostly of eastern part of Tidmarsh performed 
+	from September 2011 to September 2017 as shown in a map here.
+<!--	As of <a href="/static/tidmarsh/plantlist.html">March 2018</a>, the list contained  
+	623 photographed species (including those planted);
+	197 non-native--><!--(marked&nbsp;<span style="color:black">*</span>)--><!--, of which -->
+	<!--	38 are invasive--><!--(marked&nbsp;<span style="color:black">**</span>)--> <!--. -->
+<!--</div>					
+<div class="summary">-->
+	This list contains current data including adjacent Beaver Brook Conservation area.
+	It uses newer plant classification with simplified hierarchy (as in MA County Checklist first edition).
+	The list was generated using three tables: salicicola photos, explicit Tidmarsh records and generic records 
+        from Tidmarsh bounding box which includes <a href="/photodb/tidmarsh/inaturalist/">verified observations</a> from iNaturalist.org 
+	(e.g., <i>Cabomba caroliniana</i> misidentified as <i>Ranunculus aquatilis</i>, or <i>Barbarea vulgaris</i>). 
+	Total, {{species_found|intcomma}} species with {{images_present|intcomma}} image- and {{explicit_records|intcomma}} other records
+        are incorporated; it does not include records of yet not properly identified plants but includes
+	photos of some "garden plants" (e.g., Betula nigra, Stewartia, Bistorta, Clematis terniflora, 
+	at least the latter is an invasive plant and should be monitored or removed).
+	The treatment of the invasive willow is here more detailed and includes records of putative hybrids.
+</div>
+<div class="summary"> 	
+	The line below each plant species name shows metadata from County Checklist, including county distribution for the entire state. 
+    	and when necessary additional notes.
+	Every plant family and genus is anchored, i.e., for faster navigation one may append their name at the end of URL, e.g.,
+        #Asteraceae, for Aster family.<br/>
+ 
+{%if authorized %}   
+	<b title="Photodb: #{{photodb_version}}">Beta version</b>: editing names and photo records disabled for all users; 
+    	it is not yet mobile friendly; maps may not yet show all records (intentionally are not available for rare plants). 
+    
+	<br/><b>TODO/BUGS</b> {to remove/hide this line in public version}: 
+	<!--multiple (duplicate) iNaturalist records; -->to check mapping; fix notes and IDs; performance (when final can use cache). 
+	
+<!-- Thumbnail and list views shows irrelevant synonyms as empty line "= ".
+to check all addititions (might be old records from outside Tidmarsh) and filter out not verifiable [now 681-623 or 627:: ~58 names]
+    and to check all maps and syns, e.g., Bidens trichosperma. -->
+	<!--DEBUG:: {{tcounties|length}} {{tcounties}}-->
+Authorized={{authorized}} [uid {{request.user}}].
+{%endif%}
+	DB last modified: {{last_modified|date:'M d, Y'}} <!-- "M d, Y" Y-m-d H:i -->
+
+</div>
+		

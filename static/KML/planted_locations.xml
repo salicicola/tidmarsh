@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<locations>
+	<location lid="01" desc="" f="1.kml" name="1" pnt="-70.57057836062503,41.90181866181072"></location>
+	<location lid="02" desc="" f="2.kml" name="2" pnt="-70.57145867438517,41.90160124908402"></location>
+	<location lid="06" desc="" f="6.kml" name="6" pnt="-70.57117083807184,41.90409841666147"></location>
+	<location lid="11" desc="" f="11.kml" name="11" pnt="-70.57048284281309,41.91001975559237"></location>
+	<location lid="12" desc="" f="12.kml" name="12" pnt="-70.56980854671743,41.90828333333333"></location>
+	<location lid="13" desc="" f="13.kml" name="13" pnt="-70.56929806198723,41.90759067028169"></location>
+	<location lid="18" desc="" f="18.kml" name="18" pnt="-70.566786698005,41.90701658021715"></location>
+	<location lid="21" desc="" f="21.kml" name="21" pnt="-70.5628896,41.9066768"></location>
+	<location lid="22" desc="" f="22.kml" name="22" pnt="-70.5614412,41.9061338"></location>
+	<location lid="27" desc="" f="27.kml" name="27" pnt="-70.56811881268813,41.90348647644997"></location>
+	<location lid="B" desc="" f="planting_locations.kml.xml" name="B" pnt="-70.5716443,41.9011910"></location>
+	<location lid="C" desc="" f="planting_locations.kml.xml" name="C" pnt="-70.5733395,41.9017500"></location>
+	<location lid="D" desc="" f="planting_locations.kml.xml" name="D" pnt="-70.5724812,41.9068604"></location>
+	<location lid="E" desc="" f="planting_locations.kml.xml" name="E" pnt="-70.5678034,41.9131840"></location>
+	<location lid="f" desc="" f="planting_locations.kml.xml" name="F" pnt="-70.5619454,41.9052794"></location>
+	<location lid="a" desc="" f="fen_a.kml" name="Fen-A" pnt="-70.5722505,41.9039819"></location>
+	<location lid="b" desc="" f="fen_b.kml" name="Fen-B" pnt="-70.5704695,41.9048203"></location>
+	<location lid="c" desc="" f="fen_c.kml" name="Fen-C" pnt="-70.5689299,41.9045528"></location>
+	<location lid="d" desc="" f="fen_d.kml" name="Fen-D" pnt="-70.5713332,41.9037064"></location>
+	<location lid="G" desc="" f="planting_locations.kml.xml" name="G" pnt="-70.5627179,41.9082498"></location>
+	<location lid="H" desc="" f="planting_locations.kml.xml" name="H" pnt="-70.5611086,41.9057585"></location>
+	<location lid="I" desc="" f="planting_locations.kml.xml" name="I" pnt="-70.5616021,41.9068125"></location>
+	<location lid="J" desc="" f="planting_locations.kml.xml" name="J" pnt="-70.5679965,41.9101820"></location>
+	<location lid="K" desc="" f="planting_locations.kml.xml" name="K" pnt="-70.5680609,41.9089684"></location>
+	<location lid="L" desc="" f="planting_locations.kml.xml" name="L" pnt="-70.567943,41.908705"></location>
+	<location lid="M" desc="" f="planting_locations.kml.xml" name="M" pnt="-70.5709577,41.9013987"></location> 
+	<location lid="F" desc="" f="planting_locations.kml.xml" name="NO NAME" pnt="-70.5642843,41.9097668"></location>
+	<location lid="P1" desc="" f="planting_locations.kml.xml" name="P1" pnt="-70.5663013,41.9021972"></location>
+	<location lid="P2" desc="" f="planting_locations.kml.xml" name="P2" pnt="-70.5657864,41.9022770"></location>
+	<location lid="P3" desc="" f="planting_locations.kml.xml" name="P3" pnt="-70.5652070,41.9025805"></location>
+	<location lid="SN" desc="" f="planting_locations.kml.xml" name="Northern Sandpit" pnt="-70.5670309,41.9091760"></location><!-- N O R Y Z free -->
+	<location lid="SS" desc="" f="planting_locations.kml.xml" name="Southern Sandpit" pnt="-70.5643487,41.9046726"></location><!-- N O R Y Z free -->
+	<location lid="T" desc="" f="planting_locations.kml.xml" name="T" pnt="-70.5685329,41.9055669"></location>
+	<location lid="U" desc="" f="planting_locations.kml.xml" name="U" pnt="-70.5683613,41.9065251"></location>
+	<location lid="V" desc="" f="planting_locations.kml.xml" name="V" pnt="-70.5688548,41.9076270"></location>
+	<location lid="W" desc="" f="planting_locations.kml.xml" name="W" pnt="-70.5695844,41.9097509"></location>
+	<location lid="X" desc="" f="planting_locations.kml.xml" name="X" pnt="-70.5672026,41.9049281"></location>
+	<location lid="X1" desc="" f="planting_locations.kml.xml" name="X1" pnt="-70.5654001,41.9055030"></location>
+	
+	<location lid="KE" desc="" f="none" name="E knoll_gid_planted 11/18" pnt="-70.568833,41.904162"></location>
+	<location lid="BR" desc="Length: 0.445 km (0.276 mi)" f="none" name="Special Cell 3-7 berm : 08/16/2016" pnt="-70.568737,41.904920">-70.5683398,41.9062137 -70.5686188,41.9057585 -70.5688441,41.9054312 -70.5689406,41.9051118 -70.5690157,41.9047924 -70.5690372,41.9044091 -70.5689192,41.9043452 -70.5687046,41.9045688 -70.5684793,41.9048163 -70.5683210,41.9049581 -70.5682379,41.9050918 -70.5681574,41.9053274 -70.5681574,41.9056627 -70.5681360,41.9059981 -70.5681789,41.9061578 -70.5683398,41.9062137</location>
+	<location lid="A"  desc="Length: 0.685 km (0.426 mi) [red maple swamp)" f="planting_locations_poly.kml.xml" name="A" pnt="-70.566301,41.913679">-70.5671167,41.9132639 -70.5664730,41.9142539 -70.5669880,41.9152119 -70.5667734,41.9155632 -70.5660868,41.9148287 -70.5656147,41.9142539 -70.5656147,41.9136471 -70.5660868,41.9131361 -70.5666876,41.9127210 -70.5668592,41.9129126 -70.5671167,41.9132639</location>
+	<location lid="PF" desc="Length: 43.36 m (142.3 ft)" f="planting_locations_trackPSF.kml.xml" name="Pond Side F"     pnt="-70.566591,41.907543">-70.5667627,41.9076669 -70.5666125,41.9075152 -70.5663443,41.9074912</location>
+	<location lid="PG" desc="Length: 98.26 m (322.4 ft)" f="planting_locations_trackPSG.kml.xml" name="Pond Side G"     pnt="-70.565051,41.905731">-70.5655611,41.9055749 -70.5654860,41.9058065 -70.5651855,41.9057585 -70.5648744,41.9057905 -70.5647242,41.9059342</location>
+	<location lid="PH" desc="Length: 82.83 m (271.8 ft)" f="planting_locations_trackPSH.kml.xml" name="Pond Side H"     pnt="-70.566304,41.906769">-70.5665696,41.9064532 -70.5664515,41.9067167 -70.5662262,41.9068525 -70.5659151,41.9069483</location>
+	<location lid="PI" desc="Length: 55.92 m (183.5 ft)" f="planting_locations_trackPSI.kml.xml" name="Pond Side I"     pnt="-70.568823,41.905287">-70.5687046,41.9055270 -70.5688655,41.9053034 -70.5688977,41.9050559</location>
+	<location lid="SJ" desc="Length: 0.362 km (0.225 mi)" f="planting_locations_trackSSJ.kml.xml" name="Strea Side J"   pnt="-70.562922,41.905631">-70.5647349,41.9063095 -70.5644453,41.9061179 -70.5641019,41.9060540 -70.5636621,41.9057825 -70.5632758,41.9055749 -70.5629003,41.9055749 -70.5626106,41.9056468 -70.5624068,41.9058144 -70.5621171,41.9059821 -70.5617201,41.9058144 -70.5613768,41.9055909 -70.5611730,41.9054152</location>
+	<location lid="SI" desc="Length: 0.216 km (0.134 mi)" f="planting_locations_trackSSI.kml.xml" name="Stream Side I"  pnt="-70.567256,41.905487">-70.5682003,41.9051677 -70.5679214,41.9051118 -70.5677605,41.9052156 -70.5675995,41.9052874 -70.5674064,41.9054072 -70.5671704,41.9054391 -70.5669665,41.9055030 -70.5667841,41.9055190 -70.5666232,41.9057585 -70.5666447,41.9058943 -70.5666661,41.9060620 -70.5664301,41.9061338</location>
+<!-- missing LC and our individual plantings -->
+</locations>

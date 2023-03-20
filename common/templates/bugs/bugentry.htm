@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Salicicola: Bugs Entry</title>
+		{%include "bugs/bug_head.htm" %}
+	</head>
+	<body>
+ 		<form id="eform" method="post" enctype="multipart/form-data" action="/bug/">
+
+    {% csrf_token %}
+    
+			<input type="hidden" name="reporter" value="{{request.user}}"/> 
+  			<fieldset>
+   				<legend>
+					[ Bugs Entry &#8212; Logged in as {{request.user}} {%if created %} <!--&#8212; edit mode -->{%endif%}]
+		<input type="hidden" name="actual_user" value="{{request.user}}"/>
+   				</legend>
+   				<ol>	
+						<li>
+							<label for="lcid">User<span style="color:red">*</span></label>
+							{%if request.user.is_authenticated %}
+							<input pattern="[a-zA-Z0-9]+" required="true" type="text" id="reporter" name="reporter" value="{{reporter}}"  style="width:20em"/> 
+                            {%else%}
+                            <input pattern="[a-zA-Z0-9]+" minlength="5" required="true" type="text" id="reporter" name="reporter" value=""  style="width:20em"/>
+                            {%endif%}
+<br/>
+(if not authenticated, enter your user name, at least 5 characters, alphanumeric, no space; 
+authenticated users allowed to change ID but this may lead to unpredicted results, depending on the version)
+						</li>
+
+						<li>
+							<label title="Component/Category" for="component">Category<span style="color:red">*</span></label>
+							<input required="" type="text" id="component" name="component" value="{{component}}"  style="width:20em"/> <br/>
+(e.g., bug, nonvascular plants: misidentification, typo, etc.)
+						</li>
+				
+						<li>
+							<label for="town">Summary<span style="color:red">*</span></label>
+							<input required="true" type="text" id="summary" name="summary" value="{{summary}}"  style="width:20em"/> 
+						</li>
+					
+						<li>
+							<label for="county">URL<span style="color:red">*</span></label>
+							<input title="" type="text" id="url" name="url" value="{{url}}"  style="width:20em"/> 
+<br/>(usually filled automatically)
+						</li>
+					
+						{%if created %}
+						<li>
+							<label for="created">Created</label>
+							<input readonly="true" type="text" id="created" name="created" value="{{created}}" style="width:20em"/> 
+<br/>(should be filled automatically, used as a part of temporary ID)
+						</li>
+						{%endif%}
+					<li>
+						<label title="Notes/Description" for="notes">Notes</label>
+						<textarea id="notes" name="notes">{{notes}}</textarea>
+					</li>
+
+
+					<li><label>
+						<input type="submit" value="Submit"/></label>
+					</li>
+   				</ol>
+				<div style="font-size:90%;color:darkgrey">
+ Version <i>{{version}}</i> &#8212; Using Python <i>{{python_version}}</i> &amp; Django <i>{{django_version}}</i>
+				</div>
+  			</fieldset>
+		</form>
+	</body>
+</html>

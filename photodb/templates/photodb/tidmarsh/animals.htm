@@ -1,0 +1,28 @@
+<html>
+	<head>
+	
+	</head>
+	<body>
+		{%for group in data%}
+			<h1>{{group.latname}}</h1>
+			{%for family in group.families %}
+				<h2 style="padding-left:1em">{{family.latname}}</h2>
+				<table border="1" width="100%">
+				{%for genus in family.genera %}
+					{%for  species in genus.species%}
+						<tr>
+						<td valign="top">
+							<i>{{species.genus}} {{species.latname}}</i>
+						</td>
+						<td>
+							{%for imid in species.imids %}
+								<a href="/photodb/tidmarsh/view/{{species.pk}}/{{imid}}"><img width="100" height="100" alt="image" src="/static/thum/photos/{{imid}}/{{imid}}.jpg"/></a>
+							{%endfor%}
+						</td>
+						</tr>
+					{%endfor%}
+				{%endfor%}
+			{%endfor%}
+		{%endfor%}
+	</body>
+</html>

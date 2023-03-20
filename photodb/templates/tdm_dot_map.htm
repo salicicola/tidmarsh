@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Simple dot map</title>
+	<style type="text/css">
+					.olImageLoadError { 
+/* when OL encounters a 404, don't display the pink image */ /* A: how it works ? */
+						display: none !important;
+					}
+					body { 
+						margin: 0;
+					}		
+					#map {
+						/* float:left; */
+						width:390px;
+						height:520px;
+						top:0px;
+						left:0px;
+						border-style:solid;
+						border-width:1px;
+					}
+					#map_header {
+						position:absolute;
+						/* left:40px; */
+						left: 15px;
+						top:11px;
+						width:auto;
+						height:auto;
+						/* border: dotted gray 1px; */
+						color:darkred;
+						/* font-size:125%; */
+					
+						font-style:italic;
+					
+						padding-left:1ex;
+						padding-right:1ex;
+						font-weight:bold;
+						z-index:1000;
+					}
+	</style>
+	<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+<!--	<script src="/scripts/OpenLayers.js"></script>-->
+      <script type="text/javascript">
+					var map;
+// Avoid pink error tiles [from http://workshops.opengeo.org/stack-intro/openlayers.html
+					OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
+					OpenLayers.Util.onImageLoadErrorColor = "transparent";
+					
+function init(){		
+//map = new OpenLayers.Map("map");
+
+var map = new OpenLayers.Map('map', {
+    controls: [
+        //new OpenLayers.Control.Navigation(),
+        //new OpenLayers.Control.ArgParser(),
+        //new OpenLayers.Control.Attribution()
+    ]
+});
+
+
+var fromProj = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+var toProj   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+//var bounds = new OpenLayers.Bounds(-70.57791296667006, 41.89461763416997, -70.5515098646049, 41.91985440612845)
+var bounds = new OpenLayers.Bounds({{ bounds.0 }}, {{ bounds.1 }}, {{ bounds.2 }}, {{ bounds.3 }})
+bounds.transform(fromProj, toProj);
+							// {{base_map}}
+           var graphic = new OpenLayers.Layer.Image(
+                'simple map',            '/static/{{base_map}}',
+                bounds,
+                new OpenLayers.Size({{ width }}, {{ height }})
+                //new OpenLayers.Size(580, 288)
+                //{numZoomLevels: 15}
+            );
+ 
+//var position = new OpenLayers.LonLat(-70.56810,  41.90432).transform( fromProj, toProj);
+var position = new OpenLayers.LonLat({{ center.0 }},  {{ center.1 }}).transform( fromProj, toProj);
+							var zoom  = {{ zoom }}         //= 15; // 13 or 7  in older version
+							map.addLayer(graphic);
+							map.setCenter(position, zoom );
+							 
+            map.zoomToMaxExtent();
+							
+// we want opaque external graphics and non-opaque internal graphics:: 0.2, 1
+							var layer_style = OpenLayers.Util.extend({}, 
+							OpenLayers.Feature.Vector.style['default']);
+							layer_style.fillOpacity = 0.7; //0.2;
+							layer_style.graphicOpacity = 1; //1;
+							
+							//Red marker's style
+							var marker_style = OpenLayers.Util.extend({}, layer_style);
+							marker_style.strokeColor = "red";
+							marker_style.fillColor = "red";
+							marker_style.graphicName = "circle"; 
+							marker_style.pointRadius = 4;
+							marker_style.strokeWidth = 1; // 3 (1 tonshe, 3 tolshe border)
+							marker_style.rotation = 45;
+							marker_style.strokeLinecap = "butt";
+	
+							// Green style
+//							var area_style = {
+//							 strokeColor: "#000000",
+//							 strokeOpacity: 1,
+//							 strokeWidth: 2,
+//							 fillColor: "#00FF00",
+//							 fillOpacity: 0.6
+//							};
+	
+var vectorLayer = new OpenLayers.Layer.Vector("Simple Geometry", {style: layer_style});
+							
+{% for lonlat in lonlats %}
+var point = new OpenLayers.Geometry.Point({{ lonlat.0 }}, {{ lonlat.1 }}).transform( fromProj, toProj);
+var pointFeature = new OpenLayers.Feature.Vector(point, null, marker_style);
+vectorLayer.addFeatures([pointFeature]);
+{% endfor %}
+							
+							map.addLayer(vectorLayer);
+            }
+        </script>
+    </head>
+    <body onload="init()" style="background-color:lightgreen">
+    <div id="map"></div>
+	<div id="map_header" style="font-size:100%">{{ name }}<br/>
+	<div class="debug" style="display:none">
+		{% for lonlat in lonlats %}
+			{{ lonlat.0 }}, {{ lonlat.1 }}<br/>
+		{% endfor %}
+	</div>
+	</div>
+    </body>
+</html>

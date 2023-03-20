@@ -1,0 +1,290 @@
+<salicicola year="2022" updated="14 March 2022"> 
+	<gallery photos="35,073" plants="2,010" flora="1,941" reports="2012 2013 2014 2015 2016 2017" updated="14 Mar 2022"/>  
+	 <!--photos of  34,918" plants="2,003 31 Dec 2021 -->
+	<nonvasular photos="130" images="147" plants="45" updated="12 Mar 2018" published="12 Mar 2018"/> 
+<checklists>
+<survey href="http://172.104.19.75/plants/native/PL/" title="Native Plants of Plymouth County (Derived from MA County Checklist 2011)">
+	<page href="http://172.104.19.75/plants/native/PL/" title="29 January 2021"/>
+</survey>
+
+<survey href="http://172.104.19.75/survey/GSPW/" title="Plants of Great South Pond at Cortelli Preserve, Plymouth">
+	<page href="http://172.104.19.75/survey/GSPW/" title="2 December 2018"/>
+</survey>
+<survey href="http://172.104.19.75/survey/bootpond/" title="Plants of Boot Pond, Plymouth">
+	<page href="http://172.104.19.75/survey/bootpond/" title="Last updated 20 June 2018"/>
+	<page href="http://172.104.19.75/events/20180624/boot_pond.pdf" title="Slideshow (PDF)"/>
+</survey>
+<survey href="http://salicicola.com/checklists/tidmarsh/" title="Plants of Tidmarsh Farms and Vicinity">
+	<page href="http://salicicola.com/checklists/tidmarsh/" title="Last updated 26 March 2018"/>
+</survey>
+	<survey href="http://172.104.19.75/survey/ponds/savery/" title="Plants of Savery Pond, Plymouth">
+                <page href="http://172.104.19.75/survey/ponds/graph/eight/" title="Comparison with other Plymouth ponds"/>
+                <page href="http://172.104.19.75/survey/ponds/savery/list.html" title="Full list of plants found at Savery Pond"/>
+		<page href="http://172.104.19.75/survey/ponds/savery/gallery.html" title="Photo gallery"/>
+        </survey>
+	<survey href="http://172.104.19.75/mobile/alper/" title="Plants of D.E. Alper Nature Preserve">
+                <page href="http://172.104.19.75/mobile/alper/plantlist.html" title="Plantlist as of July 2017"/>
+                <page href="http://172.104.19.75/mobile/alper/docs" title="Plant descriptions of tagged plants"/>
+        </survey>
+	<survey href="http://172.104.19.75/survey/sixponds/" title="Plymouth Six Ponds Survey 2015">
+		<page href="http://172.104.19.75/survey/sixponds/gallery/ponds/" title="Six Ponds Gallery"/>
+	</survey>
+	<survey  href="http://172.104.19.75/checklists/MylesStandish" title="Myles Standish SF Plant List"/>
+	<survey  href="http://172.104.19.75/checklists/BlueHills" title="Blue Hills Reservation Plant List"/>	
+	<survey  href="http://172.104.19.75/checklists/CutlerPark" title="Cutler Park Plant List 2014"/>
+	<survey  href="http://172.104.19.75/checklists/PlymouthLongBeach/" title="Plymouth Long Beach Plant List 2012"/>		
+	<survey  href="http://172.104.19.75/checklists/Ellisville" title="Ellisville (Plymouth) Plant List 2012"/>
+	<survey  href="http://172.104.19.75/checklists/boxford" title="Bald Hill Reservation Plant List 2010"/>
+	<checklist title="Willows">
+		<page href="http://172.104.19.75/checklists/salix/MA" title="Massachusetts Checklist"/>
+	</checklist>
+</checklists>
+<invasive>
+	<species_notes>
+		<note href="/plants/invasive/notes/buddleja/">Another consequence of global warming? A case of <i>Buddleja davidii</i> regeneration in Massachusetts (Mar 21,  2011)</note>
+		<note href="/plants/invasive/notes/juniperus_conferta/">Japanese shore juniper (<i>Juniperus conferta</i> Parl.) found naturalized in southeastern Massachusetts (Mar 31, 2011)</note>
+		<note href="/plants/invasive/notes/20101024picea.html">Norway spruce: Yet another invasive tree in New England (Oct 24, 2010)</note>
+		<note href="/plants/invasive/notes/20090809jasione.html">Sheep's Bit (<i>Jasione montana</i>): A new invasive? (Aug 9, 2009)</note>
+		<note href="/articles/atrocinerea2">The alien rusty willow <i>Salix atrocinerea</i>: A possibility of hybridization with American willows (Jul 21, 2008)</note>
+		<note href="/articles/atrocinerea">European rusty willow <i>S. atrocinerea</i>  in eastern Massachusetts (Feb 1, 2008)</note>
+	</species_notes>
+	<reports>
+		<report/>
+		<!-- archived
+		<div class="item"><a href="/plants/invasive/reports/TidmarshBuddleja/"><i>Buddleja davidii</i> at Tidmarsh Farms, Plymouth</a> 2011</div>
+		<div class="item"><a title="" href="/plants/invasive/reports/TidmarshSalixOld/"><i>Salix cinerea</i> (and <i>S. atrocinerea</i>) at Tidmarsh Farms, Plymouth</a> 2011</div>
+		<div class="item"><a title="" href="/plants/invasive/reports/TidmarshSalixPond/"><i>Salix atrocinerea</i> at Beaver Dam Pond, Tidmarsh Farms, Plymouth</a> 2011</div>
+		<div class="item"><a href="/plants/invasive/reports/Cabomba_WGP/"><i>Cabomba caroliniana</i> at Weymouth Great Pond</a> 2010</div>
+		<div class="item"><a href="/plants/invasive/reports/Akebia/"><i>Akebia quinata</i> in Milton</a> 2009</div>
+		<div class="item"><a title="restored from draft" href="/plants/invasive/reports/Lespedeza"><i>Lespedeza thunbergii</i> in Myles Standish SF, Plymouth</a> 2007</div>
+		-->		
+	</reports>
+	<reports_archived>
+		<report id="invasive_reports_buddleja"><i>Buddleja davidii</i></report>
+		<report id="invasive_reports_cinerea_atrocinerea"><i>Salix cinerea &amp; atrocinerea</i></report>
+		<report id="invasive_reports_atrocinerea#"><i>Salix atrocinerea</i></report>
+		<report id="invasive_reports_cabomba"><i>Cabomba caroliniana</i></report>
+		<report id="invasive_reports_akebia"><i>Akebia quinata</i></report>
+		<report id="invasive_reports_lespedeza"><i>Lespedeza thunbergii</i></report>
+	</reports_archived>
+</invasive>
+<questions/>
+<quiz>
+	<image_top src="/static/photos/plants/quiz/2011/20110319ricoh0347qz.jpg"></image_top>
+	<image_bottom src="/static/photos/201010/20101019ricoh0315a.jpg"></image_bottom>
+	<image_middle src="/static/photos/200802/20080215canon0192cs.jpg"></image_middle>
+	<years>2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019</years>
+	<years_stat>2014 2015 2016 2017 2018 2019</years_stat>
+</quiz>
+<events>
+	<event name="Winter Walk in Myles Standish SF (December 11, 2016). Interactive maps:">
+		<page href="/events/20161211/easthead_december_walk.html">Geotagged photographs taken during the walk around EastHead Reservoir</page>
+		<page href="/events/20161211/easthead.html">All plants we found over the years along EastHead Reservoir Trail</page>
+	</event>
+	<event name="Spring Walk in Myles Standish SF (May 8, 2016)" href="/events/20160508/" />
+	<event name="Willow Workshop at NEWFS (April 23, 2016)" href="/events/20160423/" />
+	<event name="The Six Ponds, Plymouth. Plant Survey Presentation (March 6, 2016)" href="/events/20160306/"/>
+	<event name="Field trip in Hull (August 31, 2013). Interactive map (ACME GeoRSS Map Viewer)" href="/trips/hull/2013"/>
+</events>
+<translations>
+
+<translation href="/announcements/skv/"> <!-- skvortsov.pdf -->
+<i>Willows of Russia and Adjacent Countries</i>. Skvortsov 1999, Joensuu University. 
+Translation of <i>Willows of the USSR</i>. Skvortsov 1968.
+(Monograph is out of print.)<!-- Download 6 Mb PDF.-->
+</translation>
+
+<translation href="/translations/Skvortsov.html">
+	<i>Alexey Konstantinovich Skvortsov
+	(Biographic Essay)</i>.
+	Vinogradova et al. 2005 and
+	Proskuryakova, Yurtsev 1980
+	<!--
+		Yu. K. Vinogradova, A. G. Kuklina, M. G. Pimenov,
+		A. K. Sytin, R. V. Kamelin, B. A. Yurtsev
+		Bot. Zhurn. 2005, 90 (1): 125-137
+		 
+		to the 60th anniversary of his birth
+		and 35th anniversary of scientific and social activity
+		G. M. Proskuryakova, B. A. Yurtsev
+		Bull. MOIP, Otd. biol. 1980, 85 (4): 97-104
+		 
+		Translated and compiled by I. Kadis
+
+		/translations/images/skvortsov_200.jpg
+		http://192.168.1.3:8080/slides/skvortsov.jpg			
+	-->
+</translation>
+
+<translation href="/translations/Skv2004Castanea/">
+<i>American chestnut (Castanea dentata [Marsh.] Borkh.) in Moscow</i>
+Skvortsov 2004
+</translation>
+
+<translation href="/translations/Skv2002System.html"><i>Systematics 
+			on the threshold of the 21st century</i><!--: Traditional principles and basics 
+			from the contemporary viewpoint-->.
+			Skvortsov 2002 
+			<span> (abridged translation) </span>
+</translation>
+
+<translation  href="/translations/Skv2002Betula.html"><i>A new system of the genus</i>
+			Betula <i>L. — the birch</i>.
+			Skvortsov 2002
+</translation>
+
+<translation  href="/translations/Skv1983Aronia.html"><i>Cultivated black-fruited aronia:
+			place, time, and probable mechanism of formation</i>. 
+			Skvortsov, Maitulina, Gorbunov 1983
+			<!--(<span style="color:green;font-size:90%;font-weight:bold">new</span>)-->
+</translation>
+	
+<translation  href="/translations/Skv1982Aronia.html"><i>On distinctions of cultivated black-fruited aronia from its wild ancestors</i>.
+                        Skvortsov, Maitulina 1982
+                        <!--(<span style="color:green;font-size:90%;font-weight:bold">new</span>)-->
+</translation>
+	
+<translation href="/translations/Skv1973SF.html"><i>Present 
+                        distribution and probable primary range of brittle willow (</i>Salix fragilis <i>L.)</i>.
+                        Skvortsov 1973
+</translation>
+
+<translation href="/translations/Skv1971EA.html"><i>Examples of close Euro-American connections:	
+			Two Mediterranean species of</i> Salix.
+                        Skvortsov 1971
+</translation>
+
+<translation  href="/translations/Skv1966IndHim.html"><i>On
+                        some willows from the Indian Himalaya</i>.
+                        Skvortsov. 1966
+</translation>
+		
+<translation  href="/translations/Skvortsov1955.html"><i>The
+                        willows of Central European Russia and their identification during the wintertime</i>.
+                        Skvortsov 1955
+</translation>
+
+</translations>
+<articles>
+	<article year="2011" authors="A.&#160;Zinovjev"
+		href="/notes/salix_x_meyeriana/meyeriana_winchester.html">
+		<i>Salix × meyeriana</i> Rostk. found in Winchester, eastern Massachusetts.</article>
+
+<article  year="2011" authors="A.&#160;Zinovjev"
+href="/notes/salix_x_meyeriana/forgotten_willow.html">
+A forgotten willow <i>Salix × meyeriana</i> Rostk.</article>
+
+<article  year="2010" authors="A.&#160;Zinovjev"
+href="/notes/salix_lucida">Identification of <i>Salix lucida</i> Muhl.</article>
+
+<article  year="2009" authors="A.&#160;Zinovjev and I.&#160;Kadis"
+href="/announcements/atrocinerea/"><i>Salix atrocinerea</i> and related willows in&#160;eastern&#160;Massachusetts.</article>
+		
+<article  year="2008" authors="I.&#160;Kadis and A.&#160;Zinovjev"
+href="/articles/atrocinerea2">The alien rusty willow <i>Salix atrocinerea</i>: A&#160;possibility of hybridization 
+with American willows.</article>
+		
+<article  year="2008" authors="A.&#160;Zinovjev and I.&#160;Kadis"
+href="/articles/atrocinerea">European rusty willow <i>Salix atrocinerea</i> in eastern Massachusetts.</article>
+		
+<article  year="2007" authors="A.&#160;Zinovjev and I.&#160;Kadis"
+href="/notes/atrocinerea_winter"><i>Salix atrocinerea</i> identification in winter.</article>
+		
+<article  year="2006" authors="A.&#160;Zinovjev and I.&#160;Kadis"
+href="/notes/atrocinerea_cinerea">Comparison of <i>Salix atrocinerea</i> &amp; <i>S.&#160;cinerea</i>.</article>
+		
+<article  year="2005" authors="I.&#160;Kadis"
+href="/articles/Chosenia2.html">Chosenia  II: An amazing tree of&#160;Northeast&#160;Asia.</article>
+		
+<article  year="2003" authors="I.&#160;Kadis"
+href="/articles/Chosenia1.html">Chosenia I: A long way to the West.</article>
+
+</articles>
+<notes>
+<note  href="http://172.104.19.75/notes/cuscuta/coryli/">Pondshore dodder (<i>Cuscuta coryli</i> Engelm.), a watch-listed species in Massachusetts</note>
+<note  href="http://salicicola.com/projects/flora/iris/prismatica/">Slender blueflag (<i>Iris prismatica</i>) in Massachusetts</note>
+
+<note  href="http://172.104.19.75/tales/201312/">The secrets of grape ferns, <i>Botrychium</i></note>
+
+<note  href="http://172.104.19.75/tales/201310/hamamelis.html">Flowering when honey is harvested:
+			<i>Hamamelis virginiana</i></note>
+<note  href="http://172.104.19.75/tales/201305/starflower.html">Starflower Puzzles</note>
+ 
+<note  href="http://172.104.19.75/notes/frost/">Exploring Frost Pockets in Myles Standish State Forest</note>
+
+<note  href="http://salicicola.com/photos/plants/news/20070912.html">Late-Summer Drought 2007</note>
+
+<note  href="http://salicicola.com/photos/plants/news/20061218.html">Phenological Anomaly December 2006</note>
+
+</notes>
+	
+<slides>
+<slide href="http://172.104.19.75/announcements/skvortsov90/">Are willows really that difficult for identification?
+			<br/> Slide show presented at the New England Botanical Club meeting on 8 Jan 2010
+			on A.K. Skvortsov's 90th birthday
+</slide>	
+
+<slide href="http://172.104.19.75/plants/invasive/slides">Invasive Vines: 
+			Oriental bittersweet, mile-a-minute, kudzu, and chocolate vine (2012)
+</slide>
+		 
+<slide href="http://172.104.19.75/exhibit/">Remarkable Trees in and around Boston (2010, 2.5 Mb, 21 photos)
+</slide>
+                
+<slide href="http://172.104.19.75/colorado/">Three days in Colorado (2008)</slide>
+  
+                
+<slide>Found in Boxford Forest (August 2008):
+			[<a href="http://172.104.19.75/boxford/fungi.html">fungi</a>]
+			[<a href="http://172.104.19.75/boxford/herbs.html">herbs</a>]
+			[<a href="http://172.104.19.75/boxford/woody.html">woody plants</a>]
+			[<a href="http://172.104.19.75/boxford/other.html">other</a>]
+</slide>
+</slides>
+
+<!-- not modified as being disabled -->
+<archive>
+<section title="Book Advertisements">
+	<item authors="A. Zinovjev and I. Kadis" year="2009" href="/announcements/atrocinerea/"><i>Salix atrocinerea</i> and related willows in eastern Massachusetts</item>
+	<item authors="Alexey K. Skvortsov" year="1999" href="/announcements/Skvortsov1999.html" title="Willows of Russia and adjacent countries.">
+		<extra href="/announcements/skv/skvortsov.pdf">&#160;&#160;&#160;Online version (6 Mb PDF)</extra>
+	</item>             
+	<item authors="Dominique M. Collet" year="2002 and 2004"  href="/announcements/Collet2002.html">Willows of Southcentral Alaska. Willows of Interior Alaska</item>
+	<item authors="Peter W.Price" year="2003"  href="/announcements/Price2003.html">Macroevolutionary theory on macroecological patterns</item>
+	<item href="/announcements/Viitasaari2002.html">Sawflies (Hymenoptera, Symphyta) I. <!--  <br />A Review of the Suborder, the Western Palaearctic Taxa of  Xyeloidea and Pamphiloidea --> <i>Editor Matti&#160;Viitasaari&#160;2002</i></item>
+</section>
+
+<section title="Translations">
+       <item href="/translations/Zin1982a.html">A.G. Zinovjev 1982.
+		Significance of concealed feeding habits in the evolution of sawflies of the 
+		subfamily Nematinae (Sep 22, 2003)
+       </item>
+</section>
+
+<section title="Checklists/Surveys">
+	<item href="/boxford/">Boxford State Forest (2008)<!--<br/>
+			Including <a href="/boxford/LetterBoxfordInventory.pdf">Open letter and plant inventory</a> (13 Aug 2008),
+			<a href="/boxford/boxford.html">Plant inventory</a> of the proposed harvest area
+			(last updated 12 Jul 2009; for the entire Bald Hill Reservation list see 'Checklists'),
+			map and slideshows-->
+       </item>
+       <item  href="/checklists/galls/sawflies">Gall-Making Sawflies on Salicaceae:
+		Northeastern US (2006)
+      </item>
+</section>
+<reports>
+      
+		<report id="invasive_reports_buddleja" href="/plants/invasive/reports/TidmarshBuddleja/"><i>Buddleja davidii</i> at Tidmarsh Farms, Plymouth 2011</report>
+		<report id="invasive_reports_cinerea_atrocinerea"  href="/plants/invasive/reports/TidmarshSalixOld/"><i>Salix cinerea</i> (and <i>S. atrocinerea</i>) at Tidmarsh Farms, Plymouth 2011</report>
+		<report id="invasive_reports_atrocinerea" href="/plants/invasive/reports/TidmarshSalixPond/"><i>Salix atrocinerea</i> at Beaver Dam Pond, Tidmarsh Farms, Plymouth 2011</report>
+		<report id="invasive_reports_cabomba" href="/plants/invasive/reports/Cabomba_WGP/"><i>Cabomba caroliniana</i> at Weymouth Great Pond 2010</report>
+		<report id="invasive_reports_akebia" href="/plants/invasive/reports/Akebia/"><i>Akebia quinata</i> in Milton 2009</report>
+		<report id="invasive_reports_lespedeza" note="restored from draft" href="/plants/invasive/reports/Lespedeza"><i>Lespedeza thunbergii</i> in Myles Standish SF, Plymouth 2007</report>
+
+</reports>
+
+</archive>
+
+
+
+</salicicola>

@@ -1,0 +1,13 @@
+
+.ELEMENT button.edit {
+    background-color: white;
+    display: none;
+}
+
+#RawXML_view {
+    display: none;
+}
+
+.toRaw {
+    display: none; 
+}

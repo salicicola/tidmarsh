@@ -1,0 +1,61 @@
+body {
+    background-color: #000055;
+}
+
+form {
+}
+
+div {
+    border-style: solid;
+    border-width: 1px;
+    margin-left: 10px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    margin-right: 3px;
+    background-color: #EEEEEE;
+}
+
+.ELEMENT_NAME {
+    margin-left: 2px;
+    margin-right: 2px;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: gray;
+    background-color: lightgray;
+}
+
+/* ****************************** */
+/* not working in IE => repeated using class selector */
+input[type=text] {
+}
+.ATTRIBUTES {
+font-family: Courier, monospace;
+    margin-left: 2px;
+    display: none;
+    padding-left: 5px;
+    border-width: 1;
+    border-style: solid;
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
+    height: 1.7em;
+    background-color: #EEEEEE;
+}
+/* ***** end of input type=text RULE ***** */
+
+.TEXT_DATA {
+font-family: Courier, monospace;
+     margin-left: 5px;
+    padding-left: 5px;
+    height: 1.5em;
+    border-width: 1;
+    border-style: solid;
+    overflow: visible;
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+}
+
+.COMMENTS {
+    color: white;
+}

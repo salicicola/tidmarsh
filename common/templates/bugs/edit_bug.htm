@@ -1,0 +1,95 @@
+<html>
+<head>
+		<title>Salicicola: Bugs Entry</title>
+		{%include "bugs/bug_head.htm" %}
+
+<style type="text/css">
+			#eform{margin: 20px auto;width: auto;}
+			#eform table {
+				margin: 20px auto;
+				width: auto;
+			}
+			#eform table td, th{
+				background-color:#DDDDDD;
+				padding:5px;
+			}
+
+input[type=text] {
+width: 20em;
+}
+</style>
+</head>
+<body>
+<div id="eform">
+<form method="POST" action="/bug/manage/">
+ {% csrf_token %}
+<table border="0">
+	<tr>
+		<th colspan="2">Bugs Management</th>
+	</tr>
+	<tr>
+		<td>Submitted By</td>
+		<td><input type="text" name="reporter" value="{{reporter}}"/></td>
+    </tr>
+	<tr>
+		<td>Actual UID</td>
+		<td><input type="text" name="actual_user" readonly="true" value="{{actual_user}}"/></td>
+    </tr>
+	<tr>
+		<td>Category/Component</td>
+		<td><input type="text" name="component" value="{{component}}"/></td>
+    </tr>
+	<tr>
+		<td>Summary</td>
+		<td><input type="text" name="summary" value="{{summary}}"/></td>
+    </tr>
+	<tr>
+		<td>Description/Notes</td>
+		<td><input type="text" name="notes" value="{{notes}}"/></td>
+    </tr>
+
+	<tr>
+		<td>URL</td>
+		<td><input type="text" name="url" value="{{url}}"/></td>
+    </tr>
+	<tr>
+		<td>Priority/Severity </td>
+		<td>
+			<input type="text" name="priority_severity" value="{{severity}}"/>
+		</td>
+    </tr>
+	<tr>
+		<td>Created</td>
+		<td><input type="text" name="created" readonly="true" value="{{created}}"/></td>
+    </tr>
+	<tr>
+		<td>
+		{% if perms.common.delete_bugrecord %}			
+				<input name="delete" type="submit" value="Delete"/>
+		{%else%}
+           {%if request.user.is_authenticated  and reporter == request.user.username %} 
+				<input name="delete" type="submit" value="Remove"/>
+           {%else%}
+				<input title="{{reporter}} != {{request.user.username}}" name="delete" type="submit" disabled="true" value="Remove"/>
+		{%endif%}
+		{%endif%}
+		</td>
+		<td>
+			{% if perms.common.add_bugrecord %}
+			<input name="submit" type="submit" value="Submit"/>
+			{%else%}
+				{%if request.user.is_authenticated  and reporter == request.user.username %}
+					<input name="save" type="submit" value="Save"/>
+				{%else%}
+					<input name="save" type="submit" disabled="true" value="Save"/>
+				{%endif%}
+			{%endif%}
+            [<span title="Primarily designed for admins, deleting and editing user's own records may be allowed for authenticated users" onclick="alert(this.title)" style="cursor:pointer"> ? </span>]
+		</td> <!-- TODO: delete:Remove and submit:Save -->
+    </tr>
+</table>
+</form>
+</div>
+</body>
+</html>
+

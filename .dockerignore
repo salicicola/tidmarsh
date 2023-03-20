@@ -1,0 +1,6 @@
+**/.bzr
+**/.bzrignore
+**/data/static/photos/*
+**/data/static/uploaded/*
+temp/admin
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+		<meta http-equiv="pragma" content="no-cache">
+		<title>Tidmarsh Farms/Sanctuary: Plants Monitoring</title>
+		<style type="text/css">
+			body {background-color: #ffffff; color: #666; }
+			body, form, ul, li, p, h1, h2, h3, h4, h5 {margin: 0;padding: 0;}
+			#container {margin: 0 0 10px; padding: 10px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; border-width:1px; border-color:#00C492; } 
+			/* border-style:solid */
+			#container {margin: 20px auto; max-width: 800px;}
+			#container h2, h3 { margin: 0 0 0px;color:#00C492;} /*font-size: 14px; text-align:center; */ 
+			#container li span {color:#00C492;}
+			/* #container ol{list-style-type: none;padding: 0;margin: 0;} */
+			/* #container li{margin: 0 0 12px;position: relative;} */
+			#container a {color:#00C492;}
+			
+			@media only screen and (max-width: 490px) {
+				body {
+				}
+				.can_hide{
+					display:none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<h2>Tidmarsh Farms/Sanctuary<span class="can_hide"><!--: (moving from geo.salicicola.com)--></span></h2>
+			<h3><!--n class="can_hide">Currently Available to </span>Test -->Plant Monitoring</h3>
+			<ul>
+				<!--<li>tidmarsh/map/planted/sites/ : no static/KML/planting_locations.kml.xml</li>
+				<li>tidmarsh/map/planted/sites/two :: no tidmarsh_planted_sites_two_map.htm</li>
+				<li>map/tidmarsh/bbox/ :: WSGIRequest' object has no attribute 'REQUEST</li>
+				-->
+				<li><a href="/photodb/tidmarsh/entry/">Generic entry form</a></li>
+				<li><a href="/static/checklists/tidmarsh/monitor/index.html">Access page to entry forms by species or site</a></li>
+				<li>
+					<a href="/photodb/tidmarsh/entry/awc/">Monitoring Atlantic White Cedar by site with a map</a>
+					<br/>
+					<a href="/photodb/tidmarsh/entry/awc/m/">Simplified for mobile phone (without map)</a>
+				</li>
+<!--				<li><span>Currently {{records|length}} uncommitted records submitted by [<i>{{uid}}</i>]<br/>
+					View/Edit</span>: 
+					{%for rec in records %}
+					    {%ifequal forloop.counter 10 %}
+					    	...
+                                            {%endifequal%}
+					    {%if forloop.counter < 10 %}
+						[<a href="/photodb/tidmarsh/entry/view/{{uid}}/{{rec}}/">{{rec}}</a>]
+					    {%else%}
+					    {%endif%}
+					{%endfor%}
+				</li>
+-->
+<!--
+				{%ifequal mode 'guest' %}
+					<li><a href="/photodb/tidmarsh/entry/admin/guest/">Clean history (marked "delete" retained) and
+					    return records in XML format</a>
+					</li>
+	                <li><a href="/photodb/tidmarsh/entry/commit/guest/">Simulate commit records</a> (all previously uncommitted records will be deleted)</li>
+				{%endifequal%}
+				{%ifequal mode 'owner' %}
+					<li><a href="/photodb/tidmarsh/entry/admin/{{uid}}/">Clean history (marked "delete" retained) and
+					    return records in XML format</a>
+					</li>
+				{%endifequal%}
+-->
+<!--				{%ifequal mode 'admin' %}
+					<li><a href="/photodb/tidmarsh/entry/admin/{{uid}}/">Clean history (marked "delete" retained) and
+					    return records in XML format</a>
+					</li>
+					<li><a href="/photodb/tidmarsh/entry/commit/{{uid}}/">Commit records</a> (all previously uncommitted records will be deleted)</li>
+				{%endifequal%}
+-->
+				{%ifequal uid 'guest' %}
+<!--				<li><a href="/admin/login/?next=/tidmarsh/">Login</a></li>-->
+				{%else%}
+				<!--<li><a href="map/planted/sites/">Sites to monitor</a></li>--><!-- : no static/KML/planting_locations.kml.xml-->
+				<li><a href="/tidmarsh/map/planted/sites/two">Sites to monitor</a> (still at tidmarsh module)</li>
+				<!--<li><a href="records/committed/view/">View committed records</a> (draft version)</li>	-->			
+				<li><a href="/admin/logout/?next=/tidmarsh/">Logout</a></li>
+				{%endifequal%}
+				<!--<li></li>-->
+			</ul>
+			<div>
+				<!--Only the record's owner or administrator can view or edit uncommitted records.
+				Only users with administrative rights can commit these records to SQL database,
+				from which records can be viewed by all registered users . -->
+				MIGRATING from tidmarsh to photodb module, alpha
+			</div>
+			<div style="display:none">
+				<b>Unfixed flaws and bugs</b>:<br/>
+				<b>1.</b> 
+					Since every user's files are independent from each other, locking appears not vitally necessary.
+					However, this is not applied to guest account intended for testing  
+					(i.e., submitting or committing records by two users without login at the same time 
+					can lead to unpredictable and potentially disastrous results.)<br/>
+				<b>2.</b> 
+					Since numbering of the uploaded files is also independent for each user, 
+					it may lead to saving different files by the same name. The easiest way to fix it,
+					would be to include user ID into the file name, which easier to implement enforcing
+					user ID to be 5-letters long.<br/>
+				<b>3.</b> Not crucial but ... do not allow to admin/commit nothing.<br/>
+				<b>4.</b> To restore photos URLs / Photos IDs (needed for us)<br/>
+			</div>
+			<hr width="33%" align="left"/>
+			<div style="font-size:85%;color:#888888;padding:1ex;">
+				Version {{version}} &#8212; using Python/Django #{{django_version}} <br/>
+			</div>
+		</div>
+	</body>
+</html>

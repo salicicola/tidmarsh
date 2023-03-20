@@ -1,0 +1,177 @@
+		{%for group in tree %}
+			<h3>{{group.higher.latname}}</h3>
+			{%for fam in group.fams %}
+				<div style="padding-left:2ex" id="{{fam.fam.latname}}">
+					<a href="/photodb/tidmarsh/gallery/view/{{fam.fam.pnid}}/">{{fam.fam.latname}}</a>
+					{%for genus in fam.genera %}
+						<div style="padding-left:2ex" id="{{genus.genus.latname}}" id="{{genus.genus.latname}}">
+{%if genus.public %}
+							<i><a href="/photodb/tidmarsh/gallery/view/{{genus.genus.pk}}/">{{genus.genus.latname}}</a></i>
+{%else%}
+<i>{{genus.genus.latname}}</i>
+{%endif%}
+							{%for species in genus.species %}
+								<div style="padding-left:2ex">
+								    {%if species.public%}
+										<i title="{{species.public}} published images"><a href="/photodb/tidmarsh/gallery/view/{{species.species.pk}}/">{{species.species.latname}}</a></i> 
+									{%else%}
+										<i>{{species.species.latname}}</i> 
+									{%endif%}
+									{{species.species.sal_authors}}
+									({{species.colnames}})
+									{%if authorized %} <!-- FIXME i.e., never in this version -->
+									 [<a target="edit" href='/photodb/edit/name/{{species.species.pk}}/'>edit</a>]
+									{%endif%}
+									{%if species.images%}
+									[ {{species.images}} image record{%if species.images == 1%}{%else%}s{%endif%}				<!--(s)-->
+									  {%if species.records %}
+									     &amp;
+									     {{species.records|length}} other record{%if species.records|length == 1%}{%else%}s{%endif%} ]
+									  {%else%}
+									     ]
+									  {%endif%}
+									{%else%}
+									    [ <b>{{species.records|length}} explicit records</b> ]
+									{%endif%}
+									<!--
+									[{{species.images}} image &amp; <span title="{{species.records}}">{{species.records|length}} other records</span>]
+									-->
+									{%if species.records%} 
+<span style="display:none">
+									DEBUG::
+									{%for r in species.records%}
+										{%if 'http' in r%}
+										  [{{r}}
+										  {%else%}
+										( {{r}} )
+										{%endif%}
+									{%endfor%}
+									{%if species.images%}
+									{%else%}
+									<b style="color:red">NEW?</b>
+									{%endif%}
+									</span>
+									{%endif%}
+									<!-- end of debug -->
+									 {%if species.meta.rare %}
+									   <!-- FIXME i.e., never shown in this version -->
+									 {%else%}
+{%if species.gps %}
+<!-- FIXME: title="points: {{species.gps|length}}" == 1-->
+									 [<a  onclick="open(this.href, 'map', 'width=900,height=800,top=10,left=10').focus();return false" 
+										      target="_map" href="/photodb/tidmarsh/map/{{species.species.pk}}/">map</a>]
+{%endif%}
+								     {%endif%}
+									{%for syn in species.synonyms%}
+										{%if syn.syn.latname %}
+										<div style="padding-left:2ex">
+											= <i>{{syn.syn.latname}}</i> {{syn.syn.authors}} <!-- sal_ -->
+											{%if authorized %}
+											[<a target="edit" href='/photodb/edit/name/{{syn.syn.pk}}/'>edit</a>]
+											{%endif%}
+										</div>
+										{%endif%}
+									{%endfor%}
+									<div style="padding-left:2ex">
+										<span style="visibility:hidden">
+										{%if species.meta.rare %}
+											[<b style="color:green">{{species.meta.rare}}</b>]
+										{%else%}
+											{%if species.meta.invasive %}
+											[<b style="color:red">{%if 'likely' in species.meta.invasive %}Likely {%endif%}Invasive</b>]
+												{%elif species.introduced%}
+												[{{species.meta.introduced}}]
+												{%else%}
+											{%endif%}
+										{%endif%}
+										[{{species.meta.status}}]
+										</span>
+										{%for c in tcounties %}
+											<span title="{{c.1}}" style="display: inline-block;width:2em;background-color:#EEEEEE;text-align: center">{{c.0}}</span>
+										{%endfor%}
+										<br/>
+										<span>
+										{%if species.meta.rare %}
+											[<b style="color:green">{{species.meta.rare}}</b>]
+										{%else%}
+											{%if species.meta.invasive %}
+												[<b style="color:red">Invasive</b>]
+												{%elif species.introduced%}
+												[{{species.meta.introduced}}]
+												{%else%}
+											{%endif%}
+										{%endif%}
+										[{{species.meta.status}}]
+										</span>
+										{% with species.meta.counties as list %}
+												{% for i in list.split %}
+													<span style="display: inline-block;width:2em;background-color:#EEEEEE;text-align: center">{{ i }}</span>
+												{%endfor%}
+										{% endwith %}
+
+
+<!--										[{{species.meta.counties}}]-->
+										{%if species.old%} 
+										{%else%}
+{%if authorized %}
+										<br/>
+										<b style="color:red">Not in the 2018 list</b>
+{%endif%}
+
+										{%endif%}
+{%if species.note %}
+<br/> <span style="color:green">{{species.note}}</span> 
+    {%if authorized %}
+        [<a style="color:red" target="editnote" href="/photodb/tidmarsh/note/{{species.species.pk}}/">Edit note</a>]
+    {%endif%}
+{%else%}
+    {%if authorized %}
+        <br/> [<a style="" target="editnote" href="/admin/photodb/checklistnote/add/?plant={{species.species.pk}}">Add note</a>]
+    {%endif%}
+{%endif%}
+
+
+<!--
+{%for rec in species.records%}
+{%if 'http' in rec %}
+[<a onclick="open('{{rec}}', 'inat', 'width=900px,height=900px').focus();return false" href="{{rec}}">iN</a>]
+{%else%} [g#{{rec}}]
+{%endif%}
+{%endfor%}
+-->
+{%if species.inat%}
+<br/> From iNaturalist:
+{%for rec in species.inat%}
+{%if forloop.counter < 10%}
+	[<a onclick="open('{{rec}}', 'inat', 'width=900px,height=900px').focus();return false" href="{{rec}}">{{forloop.counter}}</a>]
+{%else%}
+    {%if forloop.counter == 10%} ... {%endif%}
+{%endif%}
+{%endfor%}
+{%endif%}
+
+
+<div style="display:none">
+<span>[{{species.meta.status}}]</span>
+{%for c in tcounties %}
+	<span title="{{c.1}}" style="display: inline-block;width:2em;background-color:#FFFACD;text-align: center">{{c.0}}</span>
+{%endfor%}
+<br/>
+<span style="visibility:hidden">[{{species.meta.status}}]</span>
+	{% with species.meta.counties as list %}
+		{% for i in list.split %}
+    		<span style="display: inline-block;width:2em;background-color:#FFFACD;text-align: center">{{ i }}</span>
+		{%endfor%}
+  	{% endwith %}
+</div>
+
+
+
+									</div>
+								</div>
+							{%endfor%}
+						</div>
+					{%endfor%}
+				</div>
+			{%endfor%}
+		{%endfor%}

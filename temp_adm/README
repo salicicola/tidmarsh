@@ -1,0 +1,9 @@
+To run as a docker: sudo docker-compose up [port as defined]
+so far only as a ROOT
+TODO : In docker soft links would not work, hence to
+replace photos/thums links to actual dirs and copy all needed files to data/static/thums and data/static/photos
+
+can use::
+COPY [^n]*    # All files that don't start with 'n'
+COPY n[^o]*   # All files that start with 'n', but not 'no'
+COPY no[^d]*  # All files that start with 'no', but not 'nod'

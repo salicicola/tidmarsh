@@ -1,0 +1,169 @@
+<?xml version="1.0" ?>
+<records><!--missing ids manually; latname SHOULD NOT BE USED, to be taken from taxa.xml by @spid -->
+	<r fid="1434" latname="Dryopteris x boottii" spid="13196">Identified once</r> <!-- correct and even in mini 13196 but still raise -->
+<!--	<r fid="1434" latname="Matteuccia struthiopteris" spid="6038">Alien in Plymouth County, planted (nursery origin, provenance unknown)</r>-->
+	<r fid="1494" kind="reinforced" latname="Osmunda cinnamomea" spid="6088">Naturally present and planted (nursery origin, provenance unknown)</r>
+	<r fid="1540" kind="reinforced" latname="Thelypteris palustris" spid="6101">Naturally present and planted (nursery origin, provenance unknown)</r>
+	<r fid="1426" latname="Chamaecyparis thyoides" spid="5365">Planted. Closest found naturally occurring SSW of Tidmarsh, outside bounding box</r>
+	<r fid="1426" kind="reinforced" latname="Juniperus virginiana" spid="6504">Naturally occurring and planted</r>
+	<r fid="1499" kind="reinforced" latname="Pinus rigida" spid="6519">Naturally occurring and planted</r>
+	<r fid="1381" latname="Yucca filamentosa" spid="10001">At garden waste dump behind a backyard south of Tidmarsh Farms</r>
+	<r fid="1389" kind="reinforced" latname="Peltandra virginica" spid="10006">Naturally occurring and planted</r>
+	<r fid="1428" kind="reinforced" latname="Carex intumescens" spid="10011">Naturally occurring and planted</r>
+	<r fid="1428" kind="reinforced" latname="Carex lurida" spid="10012">Naturally occurring and planted</r>
+	<r fid="1428" kind="reinforced" latname="Carex longii" spid="15106">Naturally occurring and planted</r>
+<!-- <r fid="" latname="Carex ..." spid="">Naturally occurring and planted TODO: to find species </r>-->
+	<r fid="1428" latname="Rhynchospora scirpoides" spid="14424">Special Concern</r>
+	<r fid="1428" latname="Rhynchospora macrostachya" spid="12656">Planted. Occurring south of Tidmarsh, within bounding box</r>
+	<r fid="1457" latname="Iris prismatica" spid="15208">Watch-Listed. Planted. Provenance: Harwich</r>
+	<r fid="1457" latname="Iris sibirica" spid="15150">Plant in garden</r>
+	<r fid="1467" latname="Lilium philadelphicum" spid="13273">Planted</r>
+	<r fid="1467" latname="Smilacina stellata" spid="10036">Planted</r>
+	<r fid="1492" latname="Epipactis helleborine" spid="10042">South of Tidmarsh territory, within bounding box</r>
+	<r fid="1503" latname="Agrostis perennans" spid="13109"><!--Net ni photo ni tochek" ili gigantea'--></r>
+	<r fid="1503" latname="Ammophila breviligulata" spid="10050">Adventive in Tidmarsh</r>
+	<r fid="1503" latname="Anthoxanthum odoratum" spid="12304"><!--sdelat invazivnym?--></r>
+	<r fid="1503" latname="Aristida longespica" spid="15241"><!--Net ni tochek, ni photo, tolko photo etiketki; delete? mark Propagated?--></r>
+	<r fid="1503" latname="Arrhenatherum elatius" spid="15056"><!--kak otlichit ot Sorghastrum nutans? I byl li on ili tolko Sorgh.?--></r>
+	<r fid="1503" latname="Calamagrostis epigeios" spid="14430"><!--Sdelat invazivnym--></r>
+	<r fid="1503" latname="Dactylis glomerata" spid="12376"><!--propala iz spiska! unverified one foto without coord--></r>
+	<r fid="1503" latname="Deschampsia flexuosa" spid="10051"><!--otkryla--></r>
+	<r fid="1503" latname="Elymus virginicus" spid="14186">Found in 2017; supposedly, introduced by restoration company <!--otkryla--></r>
+	<r fid="1503" latname="Eragrostis curvula" spid="15206">Found in 2017; supposedly, introduced by restoration company <!--otkryla--></r>
+	<r fid="1503" latname="Hystrix patula" spid="10059">Planted</r>
+	<r fid="1503" latname="Panicum verrucosum" spid="14434">On bog outside Tidmarsh Farms, within bounding box <!--otkryla--></r>
+	<r fid="1503" latname="Paspalum setaceum var. setaceum" spid="15393">Propagated in 2014; outcome unknown <!--2014-173--></r>
+	<r fid="1503" latname="Piptochaetium avenaceum" spid="12494">Watch-Listed; planted in garden</r>
+	<r fid="1503" latname="Sorghastrum nutans" spid="15104">Claimed to be native across MA in &quot;MA County Checklist&quot;; however, in eastern MA never appears in unmodified plant communities; favorite plant of restoration companies for introductions (nickname:&quot;white engineer's foot&quot;)</r>
+	<r fid="1503" latname="Spartina pectinata" spid="13535">Adventive in Tidmarsh (discovered after the completion of restoration in 2017)</r>
+	<r fid="1392" latname="Asclepias amplexicaulis" spid="7022">Planted</r>
+	<r fid="1392" latname="Asclepias tuberosa" spid="7025">Planted; previously introduced to &quot;Mars&quot; in a seed mix</r>
+	<r fid="1394" latname="Aster umbellatus" spid="7034">Planted</r>
+	<r fid="1394" latname="Aster undulatus" spid="12172">Planted</r>
+	<r fid="1394" kind="reinforced" latname="Baccharis halimifolia" spid="7035">Naturally occurring in impoundment; planted more</r>
+	<r fid="1394" latname="Bidens connata" spid="13129">Planted</r>
+	<r fid="1394" latname="Bidens coronata" spid="13827"><!--Net sledov, chto my yeyo sazhali. kak popala? "re-introduction to the impoundment" mozhet mis-ID?--></r>
+	<r fid="1394" latname="Centaurea cyanus" spid="14264">Waif</r>
+	<r fid="1394" latname="Gaillardia x grandiflora" spid="13619">Introduced to &quot;Mars&quot;</r>
+	<r fid="1394" latname="Gnaphalium uliginosum" spid="13239">Found once</r>
+	<r fid="1394" latname="Helianthus annuus" spid="11794">Waif along Batlett Rd.</r>
+	<r fid="1394" latname="Heliopsis helianthoides" spid="12176">Introduced to &quot;Mars&quot;</r>
+	<r fid="1394" kind="reinforced" latname="Ionactis linariifolia" spid="7161">Naturally present and planted</r>
+	<r fid="1394" latname="Liatris novae-angliae" spid="10116">Special Concern, planted with NHESP permit</r>
+	<r fid="1394" latname="Liatris spicata" spid="15540">Formerly introduced to &quot;Mars&quot; in seed mix</r>
+	<r fid="1394" latname="Onopordum acanthium" spid="16313"><!--Vsyo pereneseno v Cirsium vulgare--></r>
+	<r fid="1394" kind="reinforced" latname="Pityopsis falcata" spid="11684">Naturally present and planted</r>
+	<r fid="1394" latname="Rudbeckia bicolor" spid="15816">Previously introduced to &quot;Mars&quot;</r>
+	<r fid="1394" latname="Senecio vulgaris" spid="11716">Weed in Tidmarsh Nursery <!--opened 1 photo--></r>
+	<r fid="1394" kind="reinforced" latname="Sericocarpus asteroides" spid="7136">Naturally occurring and planted</r>
+	<r fid="1394" latname="Solidago speciosa" spid="13393">Watch-Listed</r>
+	<r fid="1394" latname="Sonchus asper" spid="13396"><!--otkryla 1 foto--></r>
+	<r fid="1394" latname="Vernonia noveboracensis" spid="14806">Planted</r>
+	<r fid="1399" latname="Catalpa bignonioides" spid="4071">Seedling along road outside Tidmarsh territory</r>
+	<r fid="1402" latname="Arabis drummondii" spid="15713"><!--Izyat, gorshok from Plum Island!--></r>
+	<r fid="1406" latname="Cabomba caroliniana" spid="2529">Found outside Tidmarsh Farms territory, but within bounding box (Little Island Pond, Beaver Dam Cons. Area)</r>
+	<r fid="1412" kind="reinforced" latname="Viburnum dentatum var. lucidum" spid="10124">Naturally occurring and planted</r>
+	<r fid="1412" kind="reinforced" latname="Viburnum nudum var. cassinoides" spid="10125">Naturally occurring and planted</r>
+	<r fid="1413" latname="Arenaria serpyllifolia" spid="13124"><!--dolzhna ischeznut; foto pereneseny v Cerastium--></r>
+	<r fid="1413" latname="Dianthus barbatus" spid="13186">Previously introduced to &quot;Mars&quot;</r>
+	<r fid="1413" latname="Silene antirrhina" spid="13384"><!--Photo pereneseno: S. armeria--></r>
+	<r fid="1418" kind="reinforced" latname="Lechea mucronata" spid="12826">Naturally occurring and planted</r>
+	<r fid="1422" latname="Ipomoea purpurea" spid="15624">Waif</r>
+	<r fid="1423" kind="reinforced" latname="Cornus amomum" spid="7059">Naturally occurring and planted</r>
+	<r fid="1423" latname="Cornus racemosa" spid="7061">Planted <!--foto semyan vstavila--></r>
+	<r fid="1425" latname="Cucurbita pepo" spid="15404">Waif</r>
+	<r fid="12957" latname="Elatine minima" spid="13201">Found outside Tidmarsh Farms territory, but within bounding box (Little Island Pond, Beaver Dam Cons. Area)</r>
+	<r fid="1440" kind="reinforced" latname="Chamaedaphne calyculata" spid="7054">Naturally occurring and planted</r>
+	<r fid="1440" latname="Gaylussacia dumosa var. bigelowiana" spid="13861">Naturally occurring outside Tidmarsh Farms territory, but within bounding box, propagated from there, to be planted</r>
+	<r fid="1440" kind="reinforced" latname="Gaylussacia frondosa" spid="7091">Naturally occurring and planted</r>
+	<r fid="1440" kind="reinforced" latname="Lyonia ligustrina" spid="7120">Naturally occurring and planted</r>
+	<r fid="1440" latname="Rhododendron canadense" spid="12458">Planted </r>
+	<r fid="1440" latname="Vaccinium angustifolium" spid="7149">Naturally occurring in small amounts; propagated</r>
+	<r fid="1440" latname="Vaccinium pallidum" spid="10123"><!--otkryla--></r>
+	<r fid="1443" latname="Chamaecrista nictitans" spid="7053"><!--perenesena v C. fasciciulata--></r>
+	<r fid="1443" latname="Colutea arborescens" spid="14992"><!--Dolzhna izcheznut--></r>
+	<r fid="1443" latname="Crotalaria sagittalis" spid="15613">Propagated, but died in nursery (not introduced)</r>
+	<r fid="1443" kind="reinforced" latname="Desmodium marilandicum" spid="7068">Naturally occurring and planted</r>
+	<r fid="1443" latname="Lathyrus sylvestris" spid="14308">In Beaver Dam Cons. Area</r>
+	<r fid="1443" latname="Lespedeza violacea" spid="7113"><!--Not verified (zimneye foto)-nado ubrat--></r>
+	<r fid="1443" latname="Lespedeza virginica" spid="13271">Planted</r>
+	<r fid="1443" latname="Pisum sativum" spid="16570">Formerly introduced to &quot;Mars&quot;</r>
+	<r fid="1443" latname="Tephrosia virginiana" spid="11636">Planted</r>
+	<r fid="1444" kind="reinforced" latname="Quercus alba" spid="2656">Naturally occurring and planted</r>
+	<r fid="1444" kind="reinforced" latname="Quercus ilicifolia" spid="2659">Naturally occurring and planted</r>
+	<r fid="1444" latname="Quercus montana" spid="2665">Planted</r>
+	<r fid="1444" latname="Quercus prinoides" spid="2664">Planted</r>
+	<r fid="1444" kind="reinforced" latname="Quercus rubra" spid="2667">Naturally occurring and planted</r>
+	<r fid="1444" kind="reinforced" latname="Quercus velutina" spid="2670">Naturally occurring and planted</r>
+	<r fid="1447" latname="Geranium carolinianum" spid="13231">Weed in Nursery</r>
+	<r fid="1450" latname="Myriophyllum humile" spid="13298">Outside Tidmarsh territory, in Beaver Dam Cons. Area</r>
+	<r fid="1462" latname="Lamium galeobdolon" spid="15744">Outside Tidmarsh territory, in Beaver Dam Cons. Area</r>
+	<r fid="1462" latname="Lycopus virginicus" spid="3901"><!--vsego 1 foto; drugikh mnogo; prover ID--></r>
+	<r fid="1462" latname="Monarda fistulosa" spid="13291">Previously introduced to &quot;Mars&quot;</r>
+	<r fid="1462" latname="Pycnanthemum muticum" spid="13966">Planted</r>
+	<r fid="1462" latname="Pycnanthemum tenuifolium" spid="13795">Planted</r>
+	<r fid="1462" latname="Thymus pulegioides" spid="15530">Weed in Nursery</r>
+	<r fid="1464" kind="reinforced" latname="Lindera benzoin" spid="2514">Naturally occurring and planted</r>
+	<r fid="12558" latname="Linum intercursum" spid="15084">Special Concern. Propagated with permit from NHESP</r>
+	<r fid="12558" latname="Linum virginianum" spid="12808">Propagated</r>
+	<r fid="1475" latname="Hibiscus moscheutos" spid="2913">Planted</r>
+	<r fid="12064" kind="reinforced" latname="Rhexia virginica" spid="12068">Naturally occurring and planted</r>
+	<r fid="1483" kind="reinforced" latname="Myrica gale" spid="2650">Naturally occurring and planted</r>
+	<r fid="1483" kind="reinforced" latname="Myrica pensylvanica (Morella pensylvanica)" spid="2651">Naturally occurring and planted</r>
+	<r fid="1488" kind="reinforced" latname="Nyssa sylvatica" spid="3526">Naturally occurring and planted</r>
+	<r fid="1490" latname="Ludwigia alternifolia" spid="15152">Planted</r>
+	<r fid="1507" latname="Fagopyrum esculentum" spid="13217">First recorded in 2017. Presumably deliberate introduction by restoration company</r>
+	<r fid="1507" latname="Polygonum careyi" spid="14412">Propagated</r>
+	<r fid="1507" latname="Polygonum polystachyum" spid="14410">Escapee from garden; persisting for a few years</r>
+	<r fid="1507" latname="Polygonum x bohemicum" spid="14242">Outside Tidmarsh territory, Little Island Pond, Beaver Dam Conservation Area</r>
+	<r fid="1517" latname="Ceanothus americanus" spid="3571">Planted</r>
+	<r fid="1517" latname="Rhamnus frangula (Frangula alnus)" spid="10139"><!--vstavit v spisok: net ni odnoi fotografii!--></r>
+	<r fid="1518" kind="reinforced" latname="Amelanchier spicata" spid="3224">Naturally occurring and planted</r>
+	<r fid="1518" latname="Malus toringo" spid="16290"><!--perenesla v M. floribunda i otkryla 1 foto--></r>
+	<r fid="1518" kind="reinforced" latname="Prunus maritima" spid="3291">Naturally occurring along Bartlett Rd. and planted</r>
+	<r fid="1518" kind="reinforced" latname="Prunus serotina" spid="3297">Naturally occurring and planted</r>
+	<r fid="1518" kind="reinforced" latname="Spiraea tomentosa" spid="3351">Naturally occurring and planted</r>
+	<r fid="1519" kind="reinforced" latname="Cephalanthus occidentalis" spid="4107">Naturally occurring and planted</r>
+	<r fid="1519" latname="Mitchella repens" spid="4130">Outside Tidmarsh Territory, in Beaver Dam Cons. Area</r>
+	<r fid="1" latname="Salix atrocinerea" spid="11330"><!--?--></r>
+	<r fid="1" latname="Salix cinerea" spid="11746"><!--to be combined in a single entry?--></r>
+	<r fid="1" latname="Salix bebbiana" spid="11341">Planted, possibly a hybrid</r>
+	<r fid="1" kind="reinforced" latname="Salix discolor" spid="11334">Naturally occurs in small amount and planted</r>
+	<r fid="1" kind="reinforced" latname="Salix eriocephala" spid="11323">Naturally occurs in small amount and planted</r>
+	<r fid="1" kind="reinforced" latname="Salix humilis" spid="11338">Naturally occurs in small amount and planted</r>
+	<r fid="1" kind="reinforced" latname="Salix nigra" spid="11237">Naturally occurs in small amount and planted</r>
+	<r fid="1" latname="Salix occidentalis" spid="11632">Planted</r>
+	<r fid="1" latname="Salix pedicellaris" spid="11889">Watch-Listed. Planted</r>
+	<r fid="1" kind="reinforced" latname="Salix sericea" spid="11373">Naturally occurs in small amount and planted</r>
+	<r fid="1530" latname="Chelone glabra" spid="11990">Planted</r>
+	<r fid="1532" latname="Ailanthus altissima" spid="3622">Presumably extirpated, spot to be revisited</r>
+	<r fid="1534" latname="Physalis pubescens var. integridolia" spid="16302"><!--Stoit non-native, nursery production. Chto delat? Foto zakryt i vykinut iz spiska--></r>
+	<r fid="1534" latname="Solanum lycopersicon" spid="15440">Waif</r>
+	<r fid="1542" latname="Tilia cordata" spid="15066">Outside Tidmarsh Territory, in Beaver Dam Cons. Area</r>
+	<r fid="1545" latname="Celtis occidentalis" spid="2616">Planted</r>
+	<r fid="11804" latname="Callicarpa japonica" spid="15632">Outside Tidmarsh Territory, in Beaver Dam Cons. Area</r>
+	<r fid="11804" latname="Verbena bonariensis" spid="15673">Weed in and around nursery</r>
+	<!-- from Excel plants_existed.xml -->
+	<r kind="reinforced" cname="hayscented fern" fid="1429" fname="Dennstaedtiaceae" group="" grouplnane="Pteridophyta" latname="Dennstaedtia punctilobula" spid="6013" status="PL"/>
+	<r kind="reinforced" cname="woodland Jack-in-the-pulpit" fid="1389" fname="Araceae" group="" grouplnane="Monocotyledonae" latname="Arisaema triphyllum" spid="10005" status="PL"/>
+	<r kind="reinforced" cname="skunk cabbage" fid="1389" fname="Araceae" group="" grouplnane="Monocotyledonae" latname="Symplocarpus foetidus" spid="10007" status="PL"/>
+	<r kind="reinforced" cname="orange-fruited spike-rush" fid="1428" fname="Cyperaceae" group="" grouplnane="Monocotyledonae" latname="Eleocharis elliptica" spid="14784" status="PL"/>
+	<r kind="reinforced" cname="deertongue" fid="1503" fname="Poaceae" group="" grouplnane="Monocotyledonae" latname="Dichanthelium clandestinum" spid="10053" status="PL"/>
+	<r kind="reinforced" cname="purple lovegrass" fid="1503" fname="Poaceae" group="" grouplnane="Monocotyledonae" latname="Eragrostis spectabilis" spid="12744" status="PL"/>
+	<r kind="reinforced" cname="little bluestem" fid="1503" fname="Poaceae" group="" grouplnane="Monocotyledonae" latname="Schizachyrium scoparium" spid="10060" status="PL"/>
+	<r kind="reinforced" cname="purple chokeberry" fid="1518" fname="Rosaceae" group="" grouplnane="Dicotyledonae" latname="Aronia x prunifolia" spid="12318" status="PL"/>
+	<r kind="reinforced" cname="yellow wild indigo, horsefly weed" fid="1443" fname="Fabaceae" group="" grouplnane="Dicotyledonae" latname="Baptisia tinctoria" spid="7036" status="PL"/>
+	<r kind="reinforced" cname="enchanter's nightshade" fid="1490" fname="Onagraceae" group="" grouplnane="Dicotyledonae" latname="Circaea lutetiana ssp. canadensis" spid="10129" status="PL"/>
+	<r kind="reinforced" cname="hairy small-leaved ticktrefoil" fid="1443" fname="Fabaceae" group="" grouplnane="Dicotyledonae" latname="Desmodium ciliare" spid="13835" status="PL"/>
+	<r kind="reinforced" cname="showy aster" fid="1394" fname="Asteraceae" group="" grouplnane="Dicotyledonae" latname="Aster spectabilis" spid="7032" status="PL"/>
+	<r kind="reinforced" cname="boneset, thoroughwort" fid="1394" fname="Asteraceae" group="" grouplnane="Dicotyledonae" latname="Eupatorium perfoliatum" spid="11800" status="PL"/>
+	<r kind="reinforced" cname="coastal plain slender goldenrod" fid="1394" fname="Asteraceae" group="" grouplnane="Dicotyledonae" latname="Euthamia caroliniana" spid="10112" status="PL"/>
+	<r kind="reinforced" cname="marsh St. John's-wort" fid="1420" fname="Clusiaceae" group="" grouplnane="Dicotyledonae" latname="Triadenum virginicum" spid="10114" status="PL"/>
+	<r kind="reinforced" cname="common winterberry" fid="1388" fname="Aquifoliaceae" group="" grouplnane="Dicotyledonae" latname="Ilex verticillata" spid="7104" status="PL"/>
+	<r kind="reinforced" cname="flameleaf sumac, winged sumac" fid="1385" fname="Anacardiaceae" group="" grouplnane="Dicotyledonae" latname="Rhus copallina" spid="10118" status="PL"/>
+	<r kind="reinforced" cname="downy goldenrod" fid="1394" fname="Asteraceae" group="" grouplnane="Dicotyledonae" latname="Solidago puberula" spid="12814" status="PL"/>
+	<r kind="reinforced" cname="long-stalked aster" fid="1394" fname="Asteraceae" group="" grouplnane="Dicotyledonae" latname="Aster dumosus" spid="12810" status="PL"/>
+	<r kind="reinforced" cname="New York aster" fid="1394" fname="Asteraceae" group="" grouplnane="Dicotyledonae" latname="Aster novi-belgii" spid="7028" status="PL"/>
+
+	<r kind="" fname="Ranunculaceae" fid="1515" group="Dicots" grouplname="Dicotyledonae" latname="Clematis virginiana" spid="13169" status="PL">Planted</r>
+</records>

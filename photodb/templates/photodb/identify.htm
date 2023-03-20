@@ -1,0 +1,127 @@
+<html>
+	<head>
+	<!-- params example
+	?http://192.168.1.9:8080/photos/gallery/view/1513/6001/20070512canon0253cs&name=Adiantum pedatum
+	actually need imid and spid
+	-->
+	<script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == XMLHttpRequest.DONE) {
+			txt = xhr.responseText
+			//alert(txt);
+			document.getElementById("selSpecies").innerHTML = txt
+		}
+	}
+	
+	function fill_sp(value) {
+		//alert(value);
+		target = document.getElementById("selSpecies");
+		target.innerHTML = "";
+		url = "/photodb/getoptions/" + value
+		//alert(url);
+		xhr.open("GET", url, false);
+		xhr.send(null);
+//		text = xhr.responseText;
+//		alert(text);
+//		target.innerHTML = text;
+//		alert('done');
+	}
+	</script>
+	</head>
+	<body style="border-width:0; margin-width: 0"> 
+		<h3>Photo-Plant/Animal Names</h3>
+		<select id="selFamily" onChange="fill_sp(this.value);document.getElementById('new_fid').value=this.value"><!-- "fill_sp(this.value) -->
+			<option value="{{fid}}">{{famname}}</option>
+			{%for fam in fams%}
+				<option value="{{fam.fid}}">{{fam.famname}}</option>
+			{%endfor%}
+		</select>
+		<select id="selSpecies" onChange="document.getElementById('new_spid').value = this.value"> <!-- fill_id(this) -->
+			{%for name in names %}
+			    {%if name.2 %}
+			    	<option value="{{name.1}}" selected="true">{{name.0}}</option>
+			    {%else%}
+				<option value="{{name.1}}">{{name.0}}</option>
+				{%endif%}
+			{%endfor%}
+		</select>
+		<input type="button" value="add genus and/or species" onclick="document.getElementById('form_genus_species').style.display='block'"/>
+		<hr/>
+		<form name="form" method="POST" action="/photodb/saveID/" style="margin-top:0; padding: 0; border-width: 0">
+		{% csrf_token %}
+			<table border="1" cellpadding="1" cellspacing="0" style="margin-top: 0; margin-bottom:0; padding: 0; border-width: 1">
+				<tr>
+					<td style="color:#666666" align="right"><b>From : </b></td>
+					<td>
+						fid/spid/imid: 
+						<input type="text" name="fid"  id="fid"  size="10" readonly="true" value="{{fid}}" />
+						<input type="text" name="spid" id="spid" size="10" readonly="true" value="{{spid}}" />
+						<input type="text" name="imid" id="imid" size="30" readonly="true" value="{{imid|safe}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><b>To: </b></td>
+					<td>
+						new fid/spid: <input class="ro" type="text" name="new_fid" id="new_fid" size="10" readonly="true" value="{{fid}}"/>
+						<input class="ro" type="text" name="new_spid" id="new_spid" size="10" readonly="true" value=""/>
+					</td>
+				</tr>
+			<tr>
+				<td align="right">
+					<input class="button" type="submit" name="btnSave" value="Save" />
+				</td>
+				<td>
+					<input class="button" type="button" name="btnClose" value="Close" onclick="window.close()"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<form style="display:none" name="form_genus" id="form_genus_species" method="GET" action="/photodb/add_genus_species/" style="margin-top:0; padding: 0; border-width: 0">
+		{% csrf_token %}
+			<table border="1" cellpadding="1" cellspacing="0" style="margin-top: 0; margin-bottom:0; padding: 0; border-width: 1">
+				<tr>
+					<td><input type="text" readonly="true" name="url" value="{{request.get_full_path}}"/>
+					<td><input type="text" readonly="true" name="uid" value="{{request.user.get_username}}"/>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">FID</td>
+					<td><input name="fid" value="{{fid}}"/></td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Category</td>
+					<td><input required="true" name="category" value="{{category}}"/></td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Genus latname</td>
+					<td><input required="true" name="genus_latname" value=""/></td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Species latname</td>
+					<td><input required="true" name="latname" value=""/></td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Species authors</td>
+					<td><input name="authors" value=""/></td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Common name</td>
+					<td><input name="colnames" value=""/></td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Meta</td>
+					<td>
+					Introduced:<input type="checkbox" name="introduced"/>
+					Invasive:<input type="checkbox" name="invasive"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold"></td>
+					<td><input type="submit" value="Submit"/></td>
+				</tr>
+			</table>
+	</form>
+</body>
+</html>

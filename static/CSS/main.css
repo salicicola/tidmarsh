@@ -1,0 +1,191 @@
+
+body {
+	background-color: #F0FFF0;
+	margin-top: 0px;
+		COLOR: #8B0000; 
+}
+
+
+div.siteTitle {
+	font-family: "Lucida Handwriting", cursive ;
+	font-style: italic;
+	color: #D2691E;
+	font-size: xx-large;
+	font-weight: 900;
+}
+
+div.siteSubTitle {
+	font-family: "Lucida Handwriting", cursive ;
+	font-style: italic;
+	color: #D2691E;
+	font-size: large;
+	font-weight: 700;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.siteTitleNote {
+	color: rgb(225,0,0);
+	font-size: x-small;
+	font-weight: 700;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;	
+}
+
+body.frontPage .siteTitleNote {
+	font-family: "Lucida Handwriting", cursive ;
+	font-style: italic;
+	color: rgb(225,0,0);
+	font-size: x-small;
+	font-weight: 700;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;	
+}
+
+div.SiteContentTitle {
+	font-family: "Lucida Handwriting", cursive ;
+	font-style: italic;
+	color: darkred;
+	font-size: medium;
+	font-weight: 700;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+table.tableContents {
+	border: 0;
+}
+
+td {
+	vertical-align: top;
+}
+
+td.contentsSection {
+	font-weight: 700;
+}
+
+td ul {
+	margin-bottom: 0.1em;
+	margin-top: 0.1em;
+	margin-left: 0.5em;
+	list-style-type: none;
+}
+
+td ul li {
+	margin-top: 0.3em;
+	margin-left: 0.1em;
+}
+
+td ul li ul {
+	margin-top: 0.1em;
+	margin-left: 1.5em;
+	padding-left: 0.1em;
+	list-style-type: square;
+}
+
+td ul li ul li {
+	margin-top: 0.2em;
+	margin-left: 0.5em;
+	padding-left: 0.1em;
+}
+
+
+
+A:link {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent;
+
+}
+A:visited {
+	COLOR: #D2691E; 
+	BACKGROUND-COLOR: transparent;
+
+}
+A:active {
+	COLOR: #ff0000; 
+	BACKGROUND-COLOR: transparent;
+
+}
+A:hover {
+	COLOR: #ff0000; 
+	BACKGROUND-COLOR: transparent;
+
+}
+
+A.header:link {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent;
+	text-decoration:none;
+}
+A.header:visited {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent;
+	text-decoration:none;
+}
+A.header:active {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent;
+	text-decoration:none;
+}
+A.header:hover {
+	COLOR: #8B0000; 
+	BACKGROUND-COLOR: transparent;
+	text-decoration:none;
+}
+
+table.footer {
+	border: 0; 
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+body.frontPage span.refSiteName {
+	visibility: hidden;
+}
+body.frontPage span.refHome {
+	visibility: hidden;
+}
+
+body.frontPage span.refFeedBack {
+	visibility: hidden;
+}
+
+body.datedPage span.updated {
+	visibility: visible;
+}
+
+body.submittedPage span.updated {
+	visibility: visible;
+}
+
+body.submittedPage {
+	color: black;
+}
+/* DIV.Title */
+.Title {
+	font-family:  Helvetica, sans-serif ;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	color: black;
+}
+
+
+.marked {
+	background-color: lightsteelblue;
+	color: black;
+	font-weight: bold;
+}
+
+h2.header {
+	margin-bottom:0; color:#8B0000;
+}
+
+h3.header {
+	margin-bottom:0; color:#8B0000;
+}
+
+h4.header {
+	margin-bottom:0; color:#8B0000;
+}

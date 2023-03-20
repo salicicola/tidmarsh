@@ -1,0 +1,12 @@
+<div id="map_form">
+	<form method="get" action="{{request_path}}">
+		<input size="8"  style="width:5em" name="lat" id="lat" value="{{ start.1 }}"/> 
+		<input size="8"  style="width:5em" name="lon" id="lon" value="{{ start.0 }}"/>
+		width*height 
+		<input type="number" size="3"  style="width:4em" name="width" id="width" value="{{ width }}"/>  *
+		<input type="number" size="3"  style="width:4em" name="height" id="width" value="{{ height }}"/>
+		m
+		<input type="submit" style="font-weight:bold" value="Submit"/><br/>
+		Change coordintates manually or double-click on a map (will move triangle)
+	</form>	
+</div>

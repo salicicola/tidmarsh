@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content=""/>
+        <title>Salicicola: Tidmarsh</title>
+        <link rel="stylesheet" type="text/css" href="/static/CSS/main.css">
+    </head>
+    <body bgcolor="#F0FFF0">
+        <div style="margin: auto;max-width:760px">
+            <h2>Salicicola: Tidmarsh Farms/Sanctuary and Vicinity</h2>
+            <h3 style="margin-bottom:0;padding-bottom:0">
+                Can be used as a containerized (docker) app<br/>
+                Draft version: {{version}}<br/>
+                Currently available:
+            </h3>
+            <ul>
+                <li><a href="/plantgallery/">Plant gallery</a></li>
+                <li><a href="/animals/">Animal gallery</a></li>
+                <li><a href="/photos/">All relevant photos</a></li>
+                <li><a href="/tidmarsh/">Other relevant pages</a></li>
+                <li><a href="/tdm/">Tidmarsh nursery</a> (members only)</li> <!-- to hide it if not authenticated/authorized -->
+            </ul>
+            <div>
+                <b>Notes</b>. Limitations of this draft version: nearly all images (excluding animals) retrieved from another server;
+                all or nearly all pages are not mobile friendly.
+                Number of taxa at the gallery differ from that of the checklist (623 taxa as of March 2018), 
+                because gallery includes only photos published at salicicola (573 taxa as of February 2021).
+                <!--All other relevant salicicola photos might be imported to SQL database in future version, 
+                but such records aren't intended for direct editing even by admins.  :: done in 1.1.2 -->
+            </div>
+            <hr/>
+            <div style="color:gray;font-size:90%">
+                <b>Tech info</b>: 
+                container's size ~ 3.3MB (virtual 1.15GB).
+                Requirements according to dockerfile, etc.: Django 3.0.8 and python 3.6 with Pillow, lxml, python-dateutil.
+                (Dev version worked fine with slightly different versions, e.g. Python 3.6.9 &amp; Django 3.1.7). 
+                May use persistent volume :/data which contains all images, SQLite DB and XML/TXT files for uncommitted records; 
+                however, keep in mind that updating container's version <b>do not</b> update existed files in the volume automatically.
+                &#8212; Currently running Python {{python_version}} &amp; Django {{django_version}}.
+            </div>
+        </div>
+    </body>
+</html>

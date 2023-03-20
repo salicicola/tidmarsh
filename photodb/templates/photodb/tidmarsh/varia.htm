@@ -1,0 +1,20 @@
+<html>
+	<head>
+	{%include 'photodb/photos/style.htm'%}
+	</head>
+	<body>
+		    <h2 style="padding-left:1em">Tidmarsh Photo Varia 
+			<br/>
+			<span style="font-weight:normal">Draft: {{photos|length}} photos, not yet grouped by subcategory</span>
+		</h2>
+		<div>
+<!-- FIXME --><br/>
+		</div>
+<div style="padding-left:1em">
+        {%for photo in photos %}
+            <a href="/photodb/tidmarsh/gallery/view/{{photo.plant.pnid}}/{{photo.imid}}/"><img src="/static/thm/photos/{{photo.imid|slice:"0:6"}}/{{photo.imid}}.jpg" height="100"  title="{{photo.imid}}"/></a> 
+        {%endfor%}
+</div>
+        {%include 'photodb/photos/footer.htm'%}
+	</body>
+</html>

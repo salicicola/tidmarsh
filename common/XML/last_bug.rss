@@ -1,0 +1,16 @@
+<?xml version="1.0" ?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+    <title>Last Bug Report</title>
+    <link>http://192.168.1.9:9090/bugs/</link> 
+    <description>Last bug reported</description>
+    <atom:link href="http://192.168.1.9:9090/bugs/" rel="self"/>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Feb 2022 03:18:53 -0000</lastBuildDate>
+    <item>
+        <title>enable public captions for syns</title>
+        <link>http://192.168.1.9:9090/bugs/</link>
+        <description/>
+        
+    </item>
+    </channel>
+    </rss>

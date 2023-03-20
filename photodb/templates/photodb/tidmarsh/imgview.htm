@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Salicicola Gallery</title>
+		<link rel="stylesheet" type="text/css" href="/static/CSS/main.css"/>
+		<script language="javascript" type="text/javascript">
+			{% include "photodb/scripts.js" %}
+		</script>
+		<style type="text/css">
+			{% include "photodb/styles.css" %}
+    	</style>
+   </head>
+   <body bgcolor="#F0FFF0" onload="fillForm(); write_info()">
+      <table border="0">
+         <tr>
+            <td>
+               <div id="header" class="header">
+						<i>
+{%if category == 'varia' or category == 'other'%}
+    {%if name.latname == 'sapiens' or name.latname == 'photo' or name.latname == 'Tidmarsh'%}
+        Tidmarsh photo
+    {%else%}
+        {{name.upper.latname}} {{name.latname}}
+    {%endif%}
+{%else%}
+{%if legacy %}
+{{name.legacy_parent.sal_latname}} {{name.sal_latname}}
+{%else%}
+                        {{name.upper.latname}} {{name.latname}}
+{%endif%}
+{%endif%}
+						</i> 
+						<span>{{name.authors}}</span> 
+				{%if total %}
+                  		&nbsp;&nbsp;&nbsp;&nbsp;									
+                  		<span>
+             
+							<span style="width:15px"></span> 
+							{%if previmg %}
+							{%if legacy %}
+							<a href="/photodb/gallery/view/legacy/{{spid}}/{{previmg}}">
+							{%else%}
+							<a href="/photodb/gallery/view/{{spid}}/{{previmg}}">
+							{%endif%}
+							<img src="/static/images/larrow.gif" width="14px" border="0" vspace="0" hspace="0" align="middle">
+							</a>
+                     		{%endif%}
+							&nbsp;
+							<span class="navigation">{{curnum}} &nbsp;of &nbsp; {{total}} &nbsp;</span>
+							{%if nextimg %}
+							{%if legacy %}
+							<a href="/photodb/gallery/view/legacy/{{spid}}/{{nextimg}}"><img src="/static/images/rarrow.gif" width="14px" border="0" vspace="0" hspace="0" align="middle"></a>
+							{%else%}
+							<a href="/photodb/gallery/view/{{spid}}/{{nextimg}}"><img src="/static/images/rarrow.gif" width="14px" border="0" vspace="0" hspace="0" align="middle"></a>
+							{%endif%}
+							{%endif%}
+						</span>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+                  		[<span style="font-size:80%" id="att_number">{{irec.nr}} </span><span style="font-size:80%"> (total {{total}} images)  
+					     &nbsp;]
+                     	</span>
+                {%else%}
+                   <span style="display:none" id="att_number">{{irec.nr}}</span>
+                {%endif%}
+						<br/>
+						<span style="font-weight:normal">{{name.colnames}}</span> 
+				</div>
+               <div id="caption">
+			   	<span id="{{fid}}.{{spid}}.date" class="date" onClick="edit(this)">{{irec.date}} </span> <!-- FIXME comma in a field -->
+{%if irec.locality %}
+<span title="{{irec.locality.lcid}}" id="{{fid}}.{{spid}}.common.location" class="locality" >{{irec.locality.public_name}}</span>
+<!-- onClick="edit(this)" -->
+{%else%}
+<span id="{{fid}}.{{spid}}.locality" class="locality" >{{irec.location}} </span> <!-- disabled onClick="edit(this)" -->
+{%endif%}
+
+			   	<div id="{{fid}}.{{spid}}.note" class="note" onClick="edit(this)">{{irec.caption | safe}}</div>
+               </div>
+{%if authorized %}
+					{%include 'photodb/tidmarsh/forms_simplified.htm'%}
+{%endif%}
+				</td>
+			</tr>
+			<tr>
+				<td><img src="/servlet/GetImage?id={{imid}}"></td>
+			</tr>
+			<tr>
+				<td>
+<span style="color:#AAAAAA;font-size:85%">
+{%if authorized%}
+Edit mode.
+Some record's fields can be edited from this page:
+e.g., click on date or caption (*** is a placeholder for missing caption) to open a form;
+changing location is temporarily disabled;
+changing plant or animal identification, creating a duplicate record, or adding a new name is also disabled &#8212;
+May use bugs report feature for such purpose. Unresolved bugs: clearing field may not work: in such case try enter space.
+{%else%} &nbsp;
+{%endif%}    
+</span>   
+                </td>
+			</tr>
+		</table>
+		<table class="footer" border="0" width="100%">
+			<tbody>
+				<tr>
+					<td colspan="2" align="center">
+						<hr/>
+                        [<a target="_blank" href="http://172.104.19.75/bugs/entry/">comment or report bug</a>]
+					</td>
+				</tr>
+				<tr>
+					<td align="left"><a href="/"><b>Salicicola</b></a></td>
+					<td align="right">
+						<span style="font-size:75%">
+							© AZ  IK 2005-2021
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="color:#F0FFF0" id="debug"></div>
+	</body>
+</html>

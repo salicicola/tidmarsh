@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Bugs & Comments @ salicicola.com</title>
+	{%include "bugs/bug_head.htm" %}
+	<scripts type="text/javascript"></script>
+</head>
+<body>
+	<div id="eform">
+		<h2>Comments and Bug Reports @ Salicicola</h2>
+	 	<h3>{%if request.user.is_authenticated%} [logged as <i>{{request.user.username}}</i>]{%else%} [guest user] {%endif%}</h3>
+		
+		<div style="padding-left:1ex;padding-top:1ex">
+			
+			The purpose of this module is not only reporting bugs in website; 
+			it also can be used for any comments, particularly to suggest plant/animal ID.
+			It uses two database: main one can only be accessed by admins; 
+			while uncommitted records are using temporary DB.
+			For now, authentication is not obligatory to data <a href="/bugs/entry/">entry</a> but recommended:
+			only registered users properly authenticated may be allowed to <a href="/bugs/view/">view</a>, edit or delete their own records
+			(as long as they aren't committed to the main DB).
+			&#8212;
+			Version: {{version}} 
+		</div>
+	</div>
+</body>
+</html><!--
+ bugs/ entry/
+ bugs/ view/
+ bugs/ edit/
+ bugs/ manage/ 
+ bugs/ rss/latest/
+ bugs/ 401/
+-->

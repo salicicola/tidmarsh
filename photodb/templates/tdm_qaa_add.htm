@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="expires" content="0">
+      <meta http-equiv="cache-control" content="no-cache">
+      <meta http-equiv="phragma" content="no-cache">
+      <title>Salicicola Plants Data Entry Form</title><style type="text/css">
+					body {
+						padding:1px;
+						background-color:#EEEEEE;
+					}
+					h1, h2, h3, h4, h5 {
+						margin-top:0;
+						margin-bottom:0;
+						font-size:110%;
+					}
+					input, textarea, button {
+						font-weight:bold;
+						width: 200px;
+					}
+
+					label {
+						font-weight:bold;
+					}
+					
+					
+					
+					
+					
+					
+				</style><script type="text/javascript">
+					function removeRecord() {
+						if (confirm('Are you sure? Record will be deleted')) {
+							tag = document.createElement('input');
+							tag.setAttribute('name', 'remove');
+							tag.setAttribute('value', 'record');
+							tag.setAttribute('type', 'hidden');
+							document.getElementsByTagName('form')[0].appendChild(tag);
+							document.getElementsByTagName('form')[0].submit();
+						}
+					}
+					
+					function $(s) {return document.getElementById(s)}
+					
+					function getXHR () {
+try {return new XMLHttpRequest();} catch (e) {}
+try {return new ActiveXObject("Msxml2.XMLHTTP.6.0");}	catch (e) {}
+try {return new ActiveXObject("Msxml2.XMLHTTP.3.0");}	catch (e) {}
+try {return new ActiveXObject("Msxml2.XMLHTTP");}	catch (e) {}
+try {return new ActiveXObject("Microsoft.XMLHTTP");}	catch (e) {}
+alert("XMLHttpRequest not supported or disabled");
+return null;
+					}
+
+					function handleResponse(xhr, fname) {
+						//alert(xhr.readyState);
+						if (xhr.readyState == 4) {
+							//alert(xhr.status);
+							if (xhr.status == 200) {
+								xDoc = xhr.responseXML;
+								document.getElementsByTagName('body')[0].style.color = '';
+								//alert('this is a stub, nothing actually removed');
+								$("d_" + fname).style.textDecoration = 'line-through';
+								$("a_" + fname).style.display = 'none';
+								$("d_" + fname).title = 'only the reference to uploaded image deleted, the image itself will be deleted later'
+								disableForm(false);
+							}
+						}
+						else {
+							//alert(xhr.readyState);
+						}
+					}
+					
+					function removeImage(fname) {
+						URL = "/servlet/RemoveUpoadedRecord?name=" + fname;
+						document.getElementsByTagName('body')[0].style.color = '#AAAAAA';
+						disableForm(true);
+						var XHR = null;
+						var XHR = getXHR();
+						if (! XHR) {
+							alert('cannot do it: your browser seems do not support XMLHttpRequest, check its properties');
+							return;
+						}
+						else {
+							XHR.open("GET", URL, true) // sync
+							XHR.onreadystatechange = function () { handleResponse(XHR, fname) }
+							XHR.send(null);
+						}
+					}
+					
+					function disableForm(action) {
+							xx = document.getElementsByTagName('input');
+							for (i = 0; i < xx.length; i++ ) {
+								//alert(xx[i].tagName + " " + xx[i].disabled);
+								xx[i].disabled = action;
+							}
+					}
+					function setTimestamp() {
+							//d = new Date();
+							//timestamp=d.toString();
+							//document.getElementById('created').value= timestamp;
+							if (category.length) {
+								cat = document.getElementById('category');
+								opts = cat.getElementsByTagName('option');
+								for (i=0; i < opts.length; i++) {
+									if (opts[i].getAttribute('value') == category) {
+										//alert(opts[i].innerHTML);
+										opts[i].setAttribute('selected', 'selected')
+									}
+								}
+							}
+							if (spid.length) {
+								//alert(spid);
+								spp = document.getElementById('plant_id');
+								opts = spp.getElementsByTagName('option');
+								for (i=0; i < spp.length; i++) {
+									if (opts[i].getAttribute('value') == spid) {
+										//alert(opts[i].innerHTML);
+										opts[i].setAttribute('selected', 'selected')
+									}
+								}
+							}
+					}
+					var spid = '{{plant_id}}';
+					var category = '{{category}}';
+					//alert(spid + ' ' + category);
+					function set_plantname(sel) {
+						//alert(sel);
+						var idx = sel.selectedIndex;
+						//alert(idx);
+						ops = sel.options;
+						txt = ops[idx].text;
+						//alert(txt);
+						document.getElementById('plantname').value=txt;
+					}
+					function clean_plant_id() {
+						sel = document.getElementById('plant_id');
+						sel.selectedIndex = 0;
+						
+					}
+				</script></head>
+<body onload="setTimestamp()">
+<h3>Salicicola Plant Databases<!-- Tidmarsh Farms @ Salicicola--></h3>
+<h3>
+{%if rid %} Edit {%else%} New {%endif%}  Plant Record
+{% ifequal uid 'anonym' %} 
+(<span style="color: red;">by guest user</span>)
+{% else %}
+<span style="font-weight:normal"> </span>
+{% endifequal %}
+</h3>
+<form method="post" enctype="multipart/form-data" action="/tidmarsh/entry/save/"><!-- trailing slash important dealing with POST -->
+{% csrf_token %}
+<table>
+<tbody>
+<tr>
+<td><label for="category">Category</label></td>
+<td>
+{% ifequal category 'm' %}
+<input style="width:0px;visibility:hidden" name="category" id="category" type="text" value="m" readonly="true">
+Monitoring
+{%else%}
+<select name="category" id="category">
+<option value="a">Check plant ID</option>
+<option value="m">Monitoring</option>
+<option value="i">Report invasive</option><!-- selected="selected" -->
+<option value="r">Confidential (e.g., rare)</option>
+<option value="">Unspecified</option></select>
+{%endifequal%}
+</td>	
+</td>
+</tr>
+<!--<tr>
+<td><label for="rid">Record#</label></td>
+<td>
+
+</td>
+</tr>
+<tr>-->
+<td valign="top"><label for="recorded_by">UserID &amp; Rec#</label></td>
+<td>
+{% if uid %} 
+	<input name="uid" readonly="true" value="{{uid}}"/><!-- UID / recorded_by-->
+{% else %}
+	<input name="uid" />
+{% endif %}
+<span style="color: red;" title="obligatory field"> *</span>
+<input style="width:3ex" name="rid" value="{{rid}}" type="text" readonly="true">
+</td>
+</tr>
+{% if plant_id %}
+<tr>
+<td><label for="plantname">Plantname</label></td>
+<td>
+<input readonly="true" id="plantname" name="plantname" value="{{plantname}}">
+<input style="width:6ex" id="plant_id" readonly="true"  name='plant_id' value="{{plant_id}}"/>
+</td>
+</tr>	
+
+{%else%}
+<tr>
+<td><label for="plant_id">Choose plantname</label></td><!-- Plant Name -->
+<td>
+<select name="plant_id" id="plant_id" onchange="set_plantname(this)">
+<option value="">None selected</option>
+<optgroup label="Common Names"><!-- XXX -->
+{% include 'colnames' %}
+<option value=""> other </option>
+</optgroup>
+<optgroup label="Latin Names">
+{% include 'latnames' %}
+<option value=""> other </option>
+</optgroup>
+</select>
+</td>
+</tr>	
+<tr>
+<td><label for="plantname">Or type name</label></td>
+<td><input onchange="clean_plant_id()" id="plantname" name="plantname" value="{{plantname}}"></td>
+</tr>	
+{% endif %}
+
+<!--	<tr>
+	<td><label for="question">Question</label></td>
+	<td><textarea name="question">{{question}}</textarea></td>
+	</tr>
+<tr>-->
+<td><label for="location">Location</label></td>
+<td>
+<input name="location" value="{{location}}">
+<input style="width:3ex" name="lcid" value="{{lcid}}">
+</td>
+</tr>
+<tr>
+<td><label for="coordinates">GPS explicit</label></td>
+<td><input name="coordinates" value="{{coordinates}}"></td>
+</tr>
+<tr>
+<td><label for="coordinates">GPS from photo</label></td>
+<td>
+<input size="5" style="width:13ex" readonly="true" name="lat" value="{{lat}}"> 
+<input size="5" style="width:13ex" readonly="true" name="lon" value="{{lon}}">
+</td>
+</tr>
+<tr>
+<td><label for="observed">Observation Date</label></td>
+<td title="in YYYY-MM-DD format">
+{%if observed %}
+<input name="observed" value='{{observed}}'>
+{%else%}
+<input name="observed" value='{% now "Y-m-d" %}'>
+{%endif%}
+<span style="color:red"><up> * </up></span> 
+</td>
+</tr>
+<tr>
+<td><label for="notes">Notes</label></td>
+<td><textarea name="notes">{{notes}}</textarea></td>
+</tr>
+<tr>
+<td><label for="created">Created/Modified</label></td>
+<td><input id="created" name="created" value="{{created}}" readonly="true">
+</tr>
+<!--						
+{% if uid %}
+{% else %}
+<tr>
+<td><label for="notes">Comments<br/>Contact Info</label></td>
+<td>
+<textarea name="comments"></textarea>
+</td>
+</tr>
+{% endif %}-->
+<tr>
+<td><label for="photo_url">Photo URL</label></td>
+<td>
+<input name="photo_url" value="{{photo_url}}">
+</td>
+</tr>							
+		
+<tr>
+<td><label for="photos">Upload photo</label></td>
+<td>
+<input type="file" id="file" name="file" value="upload image"/>
+</td>
+</tr>
+
+<tr>
+<td><label for="photos">Uploaded</label></td>
+<td>
+<textarea readonly="true" name="files" style="background-color:#EEEEEE">{{files}}</textarea> <!-- XXX -->
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2">
+<input style="font-weight: bold; width: 20em;" id="bSubmit" value="Submit" type="submit"><br/>
+{%if rid%}
+<a target="_blank" href="/tidmarsh/entry/view/{{uid}}/{{rid}}/"><input style="font-weight: bold; width: 32em;" type="button" value="View record(s) with map and images (if available)"/></a>
+{%endif%}
+</td>
+</tr>
+</tbody>
+ </table>
+<div>
+</div>
+<hr/>
+<div style="font-size:85%">
+Draft (running at Python/Django: {{version}})<br/>
+Each user submits records to his/her own file;
+sysadmin edits records and commits to database.
+<!--
+Untill being verified and committed by admin users, to be viewed and edited by only user making initial entry [so?]
+&#8212; it's not applied to draft version and/or guest user (without login). -->
+Record # is not a permanent ID, it refers to uncommitted records.
+</div>
+</form>
+</body>
+</html>

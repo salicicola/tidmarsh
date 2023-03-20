@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+	<Document>
+		<name>GPS Visualizer data</name>
+		<Style id="waypoint">
+			<IconStyle>
+				<color>ffffffff</color>
+				<scale>1</scale>
+				<Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href></Icon>
+				<hotSpot x="0.5" xunits="fraction" y="0.5" yunits="fraction" />
+			</IconStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3> <div style="margin-top:8px;">$[description]</div>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Folder>
+			<name>Waypoints</name>
+			<Placemark>
+				<name>22</name>
+				<description></description>
+				<styleUrl>#waypoint</styleUrl>
+				<Point>
+					<altitudeMode>clampedToGround</altitudeMode>
+					<coordinates>-70.5614412,41.9061338</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="cache-control" content="no-cache"/>
+		<meta http-equiv="expires" content="0"/>
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+		<meta http-equiv="pragma" content="no-cache"/>
+		<title>Salicicola: Plants of Tidmarsh Farms</title>
+		<style type="text/css">
+		h1 {
+			margin-bottom:0;	
+			margin-top:0px;
+		}
+		h2 {
+			margin-top:0;
+		}
+		h2.header {
+			margin-bottom:0;font-size:27px;
+		}
+		h2.subheader {
+			margin-top:0;margin-bottom:0.5ex;font-weight:normal;font-size:20px; 
+		}
+		h2.group_header {
+			 margin-bottom:0;margin-top:2ex;
+		}
+		h3 {
+			margin-bottom:0;
+		}
+		div.summary {
+			margin-left:2em;max-width:95ex;
+		}	
+		div.species {
+			margin-left:6ex;
+			text-indent:-4ex
+		}
+		i.species {
+			font-weight:bold;
+		}
+		ul {
+			margin-top:0;
+		}
+		img.map {
+			float:right;
+			width:350px;
+			/*height:300px;*/
+			border-style:solid;
+			border-width:1px;
+			margin:1ex;
+			padding:0;
+		}
+		body {
+			max-width:1360px;
+			background-color:#F0FFF0;
+			color: #8B0000;
+			padding:1ex;
+		}
+		a {
+			color:#8B0000;
+		}
+		</style>
+		<script type="text/javascript">
+		w = null;
+		mapserver = '/'; // http://geo.salicicola.com http://172.104.19.75
+		function open_tidmarsh_map(pid) {
+			if (w) {
+				if (! w.closed) {
+					w.close();
+				} 
+			} 
+			//url = mapserver + 'tidmarsh/map/tidmarsh2/plant/all/' + pid; 
+            url = "/photodb/tidmarsh/map/" + pid + "/";
+			w = open(url, 'none', 'width=920,height=810,left=5,top=5'); 
+			w.focus();
+			return false;
+		}
+		
+		function open_atro_map() {
+			if (w) {
+				if (! w.closed) {
+					w.close();
+				} 
+			} 
+			url = "/checklists/tidmarsh/atrocinereaa_complex_map.html"; 
+			w = open(url, 'none', 'width=920,height=810,left=5,top=5'); 
+			w.focus();
+			return false;
+		}
+		
+		
+		function open_preview_map(pid) {
+				if (w) {
+					if (! w.closed) {
+						w.close();
+					} 
+				} 
+				url = mapserver + '/tidmarsh/map/preview/plant/' + pid;
+				w = open(url, 'none', 'width=390,height=520,top=200,left=600');  
+				w.focus();
+				return false;
+		}
+		function open_image(url) {
+			if (w) {
+				if (! w.closed) {
+					w.close();
+				} 
+			} 
+			w = open(url, 'none', 'width=920,height=810,left=5,top=5'); 
+			w.focus();
+			return false;
+		}
+		function open_entryform(url) {
+			if (w) {
+				if (! w.closed) {
+					w.close();
+				} 
+			} 
+			w = open(url, 'none', 'width=600,height=600,left=5,top=5'); 
+			w.focus();
+			return false;
+		}			
+	</script>
+	</head>
+	<body>
+		<h2 class="header">Plants of Tidmarsh Farms East (Plymouth, Massachusetts)</h2>
+		<h2 class="subheader"><b>Invasive and Non-Indigenous Plants Not Present before the Restoration</b></h2>
+		<div class="summary"><!--// Summary be here: [? to say something like : to monitor and ? eliminate ]<br/>
+								DRAFT: links to species use salicicola server.
+								links to photos missing.
+								list not unsorted (can do it manually in data file).
+								To check maps for empty ones.
+								In PREVIOUS page: to add if attempt to introduce FAILED (e.g., Zizania)
+								IN BOTH CASES to add Tidmarsh East -->
+								<br/>
+							
+					<!--As of March 2018, the list contains 
+					623 
+					photographed species (including those planted);
+					197 
+					non-native (marked&nbsp;<span style="color:black">*</span>), of which 
+					38 
+					are invasive (marked&nbsp;<span style="color:black">**</span>). -->
+		</div>
+		<div><br/><div>
+		<!-- EXAMPLE TEMPORARY HERE
+		<div class="species">
+			<span style="color:red"></span> 
+			<i class="species">
+				<a target="_blank" href="http://salicicola.com/photos/gallery/view/1429/6013">Dennstaedtia punctilobula</a>
+			</i> 
+			— hayscented             fern
+			— photos:
+			[<a onclick="return open_image(this.href)" target="_blank" href="http://salicicola.com/servlet/GetImage?id=20120721ricoh0906s">1</a>]
+			— [<a href="/map/tidmarsh2/plant/6013" onclick="return open_tidmarsh_map('6013')">map</a>]
+		</div> -->
+		{% for rec in recs %}
+			<div class="species">
+				<a target="_blank" href="/photodb/tidmarsh/gallery/view/{{rec.spid}}">{{rec.latname}}</a>
+				— {{rec.colname}}
+				<!-- photos -->
+				— [<a href="/photodb/tidmarsh/map/{{rec.spid}}" onclick="return open_tidmarsh_map('{{rec.spid}}')">map</a>]
+				{%if rec.notes %}
+				 — {{rec.notes}}
+				{%endif%}
+			</div>		
+		{%endfor%}
+<hr/>
+<!-- FIXME
+{%include 'photodb/photos/footer.htm' %}
+-->
+</body>
+</html>
+

@@ -1,0 +1,1 @@
+<record><reporter>tester</reporter><actual_user>AnonymousUser</actual_user><component>bug</component><summary>test</summary><url>http://192.168.1.9:9090/bugs/</url><created>2022-02-01T01:31:48.134549+00:00</created><notes>test</notes><modified>2022-02-01T01:31:57.358977+00:00</modified></record>

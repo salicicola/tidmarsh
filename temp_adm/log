@@ -1,0 +1,17 @@
+docker-compose up --force-recreate --build -d
+docker image prune -f
+
+2023-02-20 19:47:44 
+Successfully built 72d145e7fd8c
+Successfully tagged salicicola/tidmarsh:latest
+salicarium@salicarium-Inspiron-15-3567:/media/data/data/dockerized/tidmarsh$ sudo docker images
+REPOSITORY                        TAG        IMAGE ID       CREATED          SIZE
+salicicola/tidmarsh               latest     72d145e7fd8c   16 seconds ago   1.16GB
+salicicola/core                   latest     eaab22e5ea7b   3 hours ago      192MB
+salicicola/checklist_townmapper   latest     49d60a203ee9   5 hours ago      435MB
+python                            3          f92346e0c39e   9 days ago       925MB
+python                            3.6-slim   c1e40b69532f   14 months ago    119MB
+registry                          2          5c4008a25e05   24 months ago    26.2MB
+
+to other python (slim)
+salicicola/tidmarsh               latest     52a87a2820b9   13 seconds ago   359MB

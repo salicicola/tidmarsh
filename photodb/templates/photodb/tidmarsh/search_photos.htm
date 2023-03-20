@@ -1,0 +1,383 @@
+<html>
+	<head>
+			<title>Massachusetts Plant Gallery</title>
+			<link rel="stylesheet" type="text/css" href="/static/CSS/main.css" />
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!--			<script type="text/javascript" src="/static/scripts/menu.js"></script>-->
+			<style type="text/css">
+				 form td, th {
+					/* white-space: nowrap; */
+                    background-color:#DDDDDD;
+                    padding-left:1ex;
+                    padding-right:1ex;
+				 }
+                form table {
+                    border-style:solid;
+                    border-color:#AAAAAA;
+                    border-width:1px;
+                }
+			</style>
+			
+<!--<script type="text/javascript" src="Survey%20Data%20Entry%20for%20Mobile_files/species.js"></script>
+<script type="text/javascript" src="/static/scripts/species.js"></script>-->
+
+<!--<script type="text/javascript" src="/static/scripts/species_vascular.js"></script>-->
+		<script type="text/javascript">
+// removed all XHR
+
+function load_js(category) {
+      var head= document.getElementsByTagName('head')[0];
+	  try {
+		oldscript = document.getElementsByTagName("script")[0];
+        //alert(oldscript);
+        oldscript.remove();
+        //alert("removed old script")
+	  }
+      catch (e) {
+         //alert(e);
+	  }
+      var script= document.createElement('script');
+      script.src= '/static/scripts/species_' + category + '.js';
+      head.appendChild(script);
+      //alert ('loaded javascript/json file: ' + script.src);
+     if (category == 'varia') {
+		alert('select plant/animal name is not enabled for this category');
+	 }
+     document.getElementById("pnids").value = "";
+     document.getElementById("plantname").value = "";
+   }
+
+
+function updateList(txt) {
+	var DATA_LENGTH = data["names"].length;
+    var j = 0;
+    document.getElementById("pnids").value="";
+    var tobj = document.getElementById("suggest_list");
+    tobj.style.display='block';
+    tobj.innerHTML = "";
+    for (i = 0; i < DATA_LENGTH; i++) {
+       rec = data["names"][i];   
+       //FIXME use latname + colnames instead of latname to search
+       if (rec["longname"].indexOf(txt) > -1 & rec["images"] > 0) {
+           j++;
+           ele = document.createElement("li");
+           ele.setAttribute("onclick", "document.getElementById('plantname').value = this.innerHTML; document.getElementById('pnids').value=this.id;this.parentElement.style.display='none'")
+           ele.setAttribute("title", rec["authors"]);
+           ele.setAttribute("id", rec["PNID"]);
+           text = document.createTextNode(rec["longname"])
+           ele.appendChild(text);
+           tobj.appendChild(ele); 
+       }
+       if (j > 4) {
+           break;
+       }
+    }
+}
+
+			
+	</script>		
+			
+			
+			
+			
+		</head>
+		<body bgcolor="#F0FFF0">
+			<!--<script>headerWriteText('PlantGallery', true)</script>-->
+			<div style="padding-left: 1.0em; padding-top: 1em; padding-bottom:2ex; font-size: 130%; font-weight: bold">
+					Salicicola Photo Gallery Finder
+            </div>
+			<div style="margin-left: 1.5em;">
+				<form method="get" action="" autocomplete="off">
+<!--					<div style="font-size:120%; font-weight: bold">
+						<span>Search photos</span>
+						<span class="note" style="color: red"></span>
+						</div>
+-->
+					
+<table border="0">
+ <tr>
+        <th align="left"  colspan="2">
+            Search Photos by Category
+        </th>
+</tr>
+    <tr>
+        <td align="right">
+            Select category:
+        </td>
+        <td>
+            <select name="category" onchange="load_js(this.value)" required="true" autofocus="true">
+				<option value="" selected="true">not specified</option>
+                <option value="vascular" >Vascular Plants</option>
+                <option value="nonvascular">Non-Vascular Plants</option>
+                <option value="animals">Animals</option>
+                <option value="varia">Other images</option>
+            </select>
+			<upper style="color:red"> * </upper>At least one other field to be selected
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Town:
+        </td>
+        <td>
+            <select name="town">
+                <option value="Plymouth">Plymouth</option>
+            </select>
+        </td>
+    </tr>
+    <tr>      
+        <td align="right">Location:</td>
+        <td>
+            <select name="lcid">
+		<option value="MA.TDM">Tidmarsh Farms and vicinity</option>
+		<option value="MA.TDM">Tidmarsh Farms/Sanctuary only</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Year:
+        </td>
+        <td>
+            <select name="year">
+                <option value="">not specified</option>
+ <!--               <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>-->
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Month: 
+        </td>
+        <td>
+            <select name="month">
+                <option value="">not specified</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <!-- XXX : wrong value produced HttpResponseBadRequest' object has no attribute 'order_by' @ ~191 line 
+                    communicatet wrongly: internally called function SHOULD not produce any response but something else
+            -->
+        </td>
+    </tr>
+    <tr>
+        <td  align="right">
+            Day of month: 
+        </td>
+        <td>
+            <select name="day">
+                <option value="">not specified</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+        </td>
+    </tr>
+<tr>
+    <td align="right">
+        <div class="col-25">
+            <label for="plant_id" style="width:50ex">Type &amp; select plant/animal name: </label><br/>
+			<span style="font-size:75%">Enter a part of either Latin or common name (if exists)</span>		
+    	</div>
+    </td>
+    <td>
+    	<div class="col-75"> 
+     		<input title="" type="text" onkeyup="updateList(this.value);" id="plantname" name="plantname"  size="40" autocomplete="off"> 
+		<input id="pnids" name="spid" size="2" autocomplete="off" style="visibility:hidden">  <!-- copied from survey.mobile to update old  species.json, etc -->
+            <br/>
+            <ul id="suggest_list" style="display: none; max-height: 12ex; overflow: hidden; background-color: yellow; border-width: 1px; border-color: black; border-style: solid; padding: 3px;">
+	      </ul>
+        </div>
+    </td>
+</tr>
+<tr>
+	<td align="right">
+		Enter any part of image ID:
+	</td>
+	<td>
+		<input name="imid" id="imid" autocomplete="off"/>
+		(file name without extension)
+	</td>
+</tr>
+    <tr>
+        <td align="center" >
+            <input type="reset" value="Clear"/>
+        </td>
+        <td align="center">
+            <input type="submit" value="Submit"/>
+        </td>
+    </tr>
+
+ <tr>
+        <th align="left"  colspan="2">
+            To search photos outside Tidmarsh (and in all categories), use generic <a href="/photodb/search/">form</a>
+        </th>
+ </tr>
+{%comment%}
+ <tr>
+		<td align="left">Get photos with tags</td>
+		<td>
+			<button type="button" onclick="window.open('/photodb/search/tags/', 'search').focus()">Search</td>
+		</td>
+ </tr>
+ <tr>
+		<td align="left">Photos not copyrighted by Salicicola</td>
+		<td>
+			<button type="button" onclick="window.open('/photodb/search/photos/by/', 'search').focus()">Search</td>
+		</td>
+ </tr>
+<tr>
+	<td>
+		Enter a part of file name (without extension)
+		<input id="part_imid" autocomplete="off" value=""/>
+	</td>
+	<td><!-- window.open('/photodb/search/imid/'+imid, 'search').focus()-->
+		<button type="button" onclick="value=document.getElementById('part_imid').value;window.open('/photodb/search/imid/'+value, 'search').focus()">Search</button
+	</td>
+</tr>
+ <tr>
+        <th align="left"  colspan="2">
+            Search plant or animal names (with or without photos)
+        </th>
+</tr>
+<tr>
+		<td align="left">
+			Search by Latin Name
+			<input id="latin_name" autocomplete="off"/> 
+		</td>
+		<td>
+			<button  type="button" onclick="value=document.getElementById('latin_name').value.trim();window.open('/photodb/search/latname/'+value+'/');">Search</button>
+		</td>
+ </tr>
+<tr>
+		<td align="left">
+			Search by Common Name:
+			<input id="common_name" autocomplete="off"/>
+		</td>
+		<td>
+			<button  type="button"  onclick="value=document.getElementById('common_name').value.trim();window.open('/photodb/search/colname/'+value+'/');">Search</button>
+		</td>
+ </tr>
+
+<tr>
+		<td align="left">
+			Search by flag:
+			<select id="flag_name">
+				<option value="exotic">exotic</option>
+				<option value="domestic">domestic</option>
+				<option value="cultivated">cultivated</option>
+				<option value="invasive">invasive</option>
+			</select>
+			<br/>
+			Out of scope (exotic, domestic, cultivated) or invasive
+		</td>
+		<td>
+			<button type="button" onclick="value=document.getElementById('flag_name').value.trim();window.open('/photodb/search/flag/'+value+'/');">Search</button>
+			"Exotic" in this context means that the plant or animal is<br/>
+			native outside of New England and does not occur in New England<br/>
+			even as introduced or cultivated/domesticated to the best of our knowledge.
+		</td>
+ </tr>
+
+    <tr>
+        <td colspan="2" style="max-width:600px;font-size:90%">
+	    Known bugs: searches for Myles Standish SF and Middlesex Fells Reservation do not always yield correct results
+	    (location ids to be unified); cached index is in use for filtering by plant or animal name; most recent additions to the DB may not be shown;
+		when one uses legacy names, searching by plant name may not work or not work properly; 
+        some plant names, particularly those involving varieties or subspecies, must be formatted correctly.
+		Search results are still shown as a simple list, i.e., photos aren't grouped by genus.
+		Draft (alpha) version:&nbsp;#{{version}} (add more locations, fix bugs in DB, improve output, add filtering by flags) <!-- revno 191+ revno 198+-->
+        </td>
+    </tr>
+{%endcomment%}
+</table>
+</form>
+</div>
+    <table class="footer" border="0" width="100%">
+        <tbody>
+            <tr>
+                <td colspan="3">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <a href="/photodb/">
+                        <b>Salicicola</b>
+                    </a>
+                </td>
+                <td align="center">&#160;</td>
+                <td align="right">&#160; 
+                    <a href="mailto:azinovjev@salicicola.com?subject=salicicola plant gallery">webmaster</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<!-- FIXME:
+<button> will implicitly submit, 
+which can cause problems if you want to use a button in a form without it submitting. 
+Thus, another reason to use <input type="button"> (or <button type="button">)
+-->
+
