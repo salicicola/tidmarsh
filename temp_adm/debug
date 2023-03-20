@@ -1,1 +1,0 @@
-photodb/nogis_lib.py:60:out = open("_updated.txt", "w")

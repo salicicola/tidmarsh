@@ -9,3 +9,4 @@ data/fixtures/*.xml
 *copy*
 *.js.txt
 **/TMP/*
+temp_adm/
